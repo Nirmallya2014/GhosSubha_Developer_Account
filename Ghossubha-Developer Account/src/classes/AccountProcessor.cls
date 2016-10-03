@@ -5,6 +5,7 @@ public class AccountProcessor {
         Map<Id, Id> mapNoOfContact = new Map<Id, Id>();
         if(accountIds.size() > 0) {
         	System.debug('new Changes');
+        	System.debug('Debug Changes 2');
             List<Account> lstAccount = [select id, Number_of_Contacts__c, (select id from contacts) from account where id in :accountIds];
             for(Account acc : lstAccount ) {
                 List<Contact> lstCont = acc.contacts ;

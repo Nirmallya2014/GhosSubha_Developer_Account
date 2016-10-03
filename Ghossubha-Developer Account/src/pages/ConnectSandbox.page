@@ -1,0 +1,49 @@
+<apex:page controller="ConnectSandbox" showHeader="false" sidebar="false">
+
+<apex:form >
+    <apex:pagemessages />
+    <apex:pageblock title="Connect To Sandbox">
+    <apex:pageBlockSection columns="2">
+    <apex:pageBlockSectionItem >
+    <apex:outputLabel value="Client ID"></apex:outputLabel> <apex:inputText label="clientId" value="{!clientId}" id="FirstName"/>
+    </apex:pageBlockSectionItem>
+    
+    <apex:pageBlockSectionItem >
+    <apex:outputLabel value="ClientSecret"></apex:outputLabel> <apex:inputText label="LastName" value="{!clientSecret}" required="true" id="LastName"/>
+    </apex:pageBlockSectionItem>
+    
+    <apex:pageBlockSectionItem >
+    <apex:outputLabel value="Username"></apex:outputLabel> 
+               <apex:inputText label="username" value="{!username}" required="true" id="username"/>
+    </apex:pageBlockSectionItem>
+    
+    <apex:pageBlockSectionItem >
+    <apex:outputLabel value="Password"></apex:outputLabel> <apex:inputText label="Policy No" value="{!password}" required="true" id="password"/>
+    </apex:pageBlockSectionItem>
+    
+    
+    <apex:pageBlockSectionItem >
+    <apex:outputLabel value=""></apex:outputLabel> <apex:commandButton value="Next" action="{!connectSandbox}"/>
+    </apex:pageBlockSectionItem>
+    
+    </apex:pageBlockSection>
+    </apex:pageblock>
+    
+    <apex:pageblock title="Compare Files">
+    <apex:pageBlockSection columns="2">
+    <apex:pageBlockSectionItem >
+    
+    </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    </apex:pageblock> 
+    
+    <apex:pageblock title="Compare Configuration Metadata">
+    <apex:pageBlockSection columns="2">
+    <apex:pageBlockSectionItem >
+    
+    </apex:pageBlockSectionItem>
+    </apex:pageBlockSection>
+    </apex:pageblock> 
+</apex:Form>
+    
+</apex:page>

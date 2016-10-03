@@ -1,0 +1,15 @@
+<apex:page standardController="Account" recordSetVar="accountList" showHeader="false" sidebar="false">
+<apex:pageBlock title="List Of Account">
+<apex:form >
+<apex:pageBlockTable value="{!accountList}" var="acc" id="list">
+    <apex:column value="{!acc.Name}"/>
+    <apex:column value="{!acc.OwnerId}"/>
+    <apex:column value="{!acc.BillingCity}"/>
+    <apex:column value="{!acc.BillingState}"/>
+    <apex:column value="{!acc.CreatedDate}"/>
+</apex:pageBlockTable>
+
+
+</apex:form>
+</apex:pageBlock>
+</apex:page>

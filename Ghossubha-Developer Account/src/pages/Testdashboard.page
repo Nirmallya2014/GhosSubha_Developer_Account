@@ -1,0 +1,21 @@
+<apex:page sidebar="false" showHeader="false">
+<apex:includeScript value="{!$Resource.jQuery}" />
+
+<script>
+jQuery( function ($) {
+     $('#iframeID').load( function() {              
+         var $frameDoc = this.contentWindow.document,
+             urlMatch = /srcUp\(%27(.*)%27\)/;
+         $('a[href*="srcUp"]', $frameDoc).each( function () {
+             this.href = decodeURIComponent(this.href.match(urlMatch)[1]);
+         });
+     });
+
+});
+</script>
+
+<apex:iframe id="iframeID" src="commonfloor.com" height="800px" width="800px" frameborder="true"/>
+<br />
+Next
+
+</apex:page>

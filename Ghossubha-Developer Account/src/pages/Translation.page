@@ -1,0 +1,14 @@
+<apex:page language="{!language}" controller="MyController">
+    <apex:form >
+       <apex:commandlink action="{!toEnglish}" value="English"/>
+       <br/>
+       <apex:commandlink action="{!toFrench}" value="French"/>
+       <br/>
+       {!language}
+       <br/>
+       {!$ObjectType.Opportunity.label}
+       {!$Label.TestString}
+       <br/>
+       {!lblValue}
+    </apex:form>
+</apex:page>

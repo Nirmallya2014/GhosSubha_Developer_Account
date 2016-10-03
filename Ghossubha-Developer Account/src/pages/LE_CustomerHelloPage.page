@@ -1,0 +1,20 @@
+<apex:page controller="LE_CustomerHelloController" sidebar="false" showHeader="false">
+<apex:includeScript value="{!$Resource.jQuery}"/>
+
+<apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/customer-halo-left-manu-nav-design.css')}" />
+<apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-ltng.css')}" />
+<apex:stylesheet value="{!URLFOR($Resource.SLDS090, 'assets/styles/salesforce-lightning-design-system-scoped.css')}" />
+<apex:chart data="{!data}" height="200" width="90%" background="#FFFFFF">
+    <apex:legend position="top"/>
+    <apex:axis type="Category" position="left" grid="false" fields="data1,data2,data3" dashSize="2">
+    <apex:chartLabel />
+    </apex:axis>
+    <apex:axis type="Category" position="bottom" fields="fname" >
+    <apex:chartLabel rotate="315"/>
+    </apex:axis>
+    <apex:barSeries orientation="vertical" axis="left" stacked="true" xField="fname"  yField="data1,data2,data3" title="MacDonald,Promas,Worle"  colorSet="#4aa6ec,#f0c330,#35546f,#4aa6ec,#ff5b5a" >
+    <apex:chartTips height="20" width="120"/>
+    </apex:barSeries>
+    </apex:chart>
+</apex:page>

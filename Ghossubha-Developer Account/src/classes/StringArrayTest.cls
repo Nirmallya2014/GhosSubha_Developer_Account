@@ -1,0 +1,13 @@
+public class StringArrayTest{
+
+    public StringArrayTest() {
+        List<String> strList = generateStringArray(2);
+    }
+    public static List<String> generateStringArray(integer n) {
+        List<String> strList = new List<String>();
+        for(integer i = 0; i < n; i++) {
+            strList.add('Test '+i);
+        }
+        return strList;
+    }
+}

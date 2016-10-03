@@ -1,0 +1,197 @@
+<apex:page controller="CustomProductExtension1" showHeader="false" sidebar="false"  docType="html-5.0">
+    <apex:includeScript value="{!$Resource.jQuery}" />
+    <script>
+        $(document).ready(function() {
+            $('[id$=productCodeVal]').on('click', function() {
+                $('[id$=orderProductVal]').val($(this).find('.pcode').text());
+            });
+            
+            $('#fromDate').on('change', function() {
+                
+            });
+        });
+    </script>
+    <style>
+        thead tr th {
+            background: #9c9c9c !important;
+            color: #fff !important;
+            font-size: 12px !important;
+            padding: 9px 13px !important;
+        }
+    </style>
+    <apex:pageblock >
+        <apex:form id="addNewProduct">
+            <apex:pageMessages />
+            <!-------------------- Add New Product ------------------>
+            <apex:pageBlockSection title="Add Product" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Name"></apex:outputLabel>
+                    <apex:inputText value="{!Name}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Family"></apex:outputLabel>
+                    <apex:inputText value="{!Family}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Cost"></apex:outputLabel>
+                    <apex:inputText value="{!ProductCost}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Description"></apex:outputLabel>
+                    <apex:inputTextarea value="{!Description}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Type"></apex:outputLabel>
+                    <apex:selectList value="{!Type}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!ProductTypeList}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product IsActive"></apex:outputLabel>
+                    <apex:inputCheckbox value="{!IsActive}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Product Added By"></apex:outputLabel>
+                    <apex:selectList value="{!prodAddedBy}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!ownerList}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:outputLabel ></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:outputLabel ></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:commandButton action="{!SaveAndRedirect}" value="Save Record" reRender="ProductListInfo" rendered="{!showAddProductButton}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-------------------- All Product List ------------------>
+            <apex:pageBlockSection title="All Product List">
+                <apex:pageBlockTable value="{!Product2List}" var="p" id="ProductListInfo">
+                    <apex:column headerValue="Product Name">
+                        <apex:outputField value="{!p.Name}"/>
+                    </apex:column>
+                    <apex:column headerValue="ProductCode">
+                        <apex:outputLink id="productCodeVal" value="javascript&colon;void(0);"><span class="pcode">{!p.ProductCode__c}</span></apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Product Type">
+                        <apex:outputText value="{!p.Type__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Product Description">
+                        <apex:outputField value="{!p.Description}"/>
+                    </apex:column>
+                    <apex:column headerValue="Product Family">
+                        <apex:outputText value="{!p.Family}"/>
+                    </apex:column>
+                    <apex:column headerValue="Product Cost">
+                        <apex:outputText value="{!p.ProductCost__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Delete Product">
+                        <apex:commandLink action="{!deleteProduct}" value="Remove"><apex:param value="{!p.Id}" name="idToDel" assignTo="{!deleteId}" /></apex:commandLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>
+        </apex:form>
+            <!-------------------- Add New Order ------------------>
+        <apex:form id="addNewOrder">
+            <apex:pageBlockSection title="Add New Order">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer Name"></apex:outputLabel>
+                    <apex:inputText value="{!CustomerName}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer Phone"></apex:outputLabel>
+                    <apex:inputText value="{!CustomerPhone}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Select Product"></apex:outputLabel>
+                    <apex:inputText value="{!prodss}" id="orderProductVal"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer Address"></apex:outputLabel>
+                    <apex:inputTextarea value="{!CustomerAddress}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Pickup Location"></apex:outputLabel>
+                    <apex:inputText value="{!nearestLocation}"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Order Status"></apex:outputLabel>
+                    <apex:selectList value="{!orderStatus}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!orderStatusList}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Important Notes"></apex:outputLabel>
+                    <apex:inputTextarea value="{!impNotes}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Expected Delivery Date"></apex:outputLabel>
+                    <apex:outputLabel ></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                 <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:outputLabel ></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:commandButton action="{!SaveOrder}" value="Save Record" reRender="OrderListInfo" rendered="{!showAddOrderButton}"/>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+            <!-------------------- All Order List------------------>
+            <apex:pageBlockSection title="All Order List"></apex:pageBlockSection>
+            	<div>
+                <apex:outputLabel value="Select Type - "></apex:outputLabel>
+                <apex:selectList value="{!filterOrderType}" multiselect="false" size="1">
+                        <apex:selectOptions value="{!ProductTypeList}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:selectList value="{!filterOrderStatus}" multiselect="false" size="1">
+                    <apex:selectOptions value="{!orderStatusList}"></apex:selectOptions>
+                </apex:selectList>
+                <apex:outputLabel value="From"></apex:outputLabel><input type="Date" value="{!fromDate}" size="10" id="fromDate" onfocus="DatePicker.pickDate(false, this , false);" />
+                <apex:outputLabel value="To"></apex:outputLabel><input type="Date" value="{!toDate}" size="10" id="toDate" onfocus="DatePicker.pickDate(false, this , false);" />
+            	<apex:commandButton value="Display" action="{!showFilteredOrder}"/>    
+            	</div>
+            
+                <apex:pageBlockTable value="{!OrderList}" var="p" id="OrderListInfo">
+                    <apex:column headerValue="Order Number">
+                        <apex:outputField value="{!p.OrderNumber}"/>
+                    </apex:column>
+                    <apex:column headerValue="Customer Name">
+                        <apex:outputField value="{!p.CustomerName__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Phone Number">
+                        <apex:outputText value="{!p.PhoneNo__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Customer Address">
+                        <apex:outputField value="{!p.CustomerAddress__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Pickup Location">
+                        <apex:outputText value="{!p.NearestLocation__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Ordered Product">
+                        <apex:outputLink >{!p.OrderedProducts__c}</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Order Status">
+                        <apex:outputText value="{!p.Status}"/>
+                    </apex:column>
+                    <apex:column headerValue="Important Notes">
+                        <apex:outputText value="{!p.Imp_Notes__c}"/>
+                    </apex:column>
+                    <apex:column headerValue="Effective Date">
+                        <apex:outputText value="{!p.EffectiveDate}"/>
+                    </apex:column>
+                    <apex:column headerValue="Edit Product">
+                        <apex:outputLink onclick="window.open('/ManageOrder/EditOrderOrProduct?updateOrder=true&orderId={!p.Id}')">Edit Order</apex:outputLink>
+                    </apex:column>
+                    <apex:column headerValue="Delete Order">
+                        <apex:commandLink action="{!deleteOrder}" value="Remove"><apex:param value="{!p.Id}" name="idToDelOrder" assignTo="{!deleteOrderId}" /></apex:commandLink>
+                    </apex:column>
+                </apex:pageBlockTable>
+        </apex:form>
+    </apex:pageblock>
+</apex:page>

@@ -1,0 +1,81 @@
+<apex:page controller="CustomProductExtension" showHeader="false" sidebar="false">
+    <apex:includeScript value="{!$Resource.jQuery}" />
+    <script>
+    $(document).ready(function() {
+        $('[id$=updateOrder]').on('click', function() {
+            var orderInfo = {
+                "corderId"		: "{!$CurrentPage.parameters.orderId}",
+                "cname" 		: $('[id$=cname]').val(),
+                "cphone" 		: $('[id$=cphone]').val(),
+                "caddress" 		: $('[id$=caddress]').val(),
+                "cplocation" 	: $('[id$=cplocation]').val(),
+                "corderstatus" 	: $('[id$=corderstatus]').val(),
+                "cimpnotes"		: $('[id$=cimpnotes]').val()			
+            };
+            console.log(JSON.stringify(orderInfo));
+            Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.CustomProductExtension.EditAndSaveOrder}',
+                orderInfo, 
+                function(result) {
+                    if(result === 'success') {
+                        alert('Data Update Successfully');    
+                        window.opener.location.reload();
+                        window.close();
+                    }else {
+                        alert('Error Occured, Please try after some time'+result);    
+                    }
+                });
+        });
+    });
+    </script>
+    <apex:pageblock >
+        <apex:form id="UpdateItem">
+            <apex:pageMessages />
+            <!-------------------- Update ------------------>
+            <apex:pageBlockSection title="Update Order">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer Name"></apex:outputLabel>
+                    <apex:inputText value="{!ord.CustomerName__c}" id="cname"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer Phone"></apex:outputLabel>
+                    <apex:inputText value="{!ord.PhoneNo__c}" id="cphone"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Select Product"></apex:outputLabel>
+                    <apex:inputField value="{!ord.OrderedProducts__c}" id="orderProductVal"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Customer Address"></apex:outputLabel>
+                    <apex:inputTextarea value="{!ord.CustomerAddress__c}" id="caddress"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Pickup Location"></apex:outputLabel>
+                    <apex:inputText value="{!ord.NearestLocation__c}" id="cplocation"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Order Status"></apex:outputLabel>
+                    <apex:selectList value="{!orderStatus}" id="corderstatus" multiselect="false" size="1">
+                        <apex:selectOptions value="{!orderStatusList}"></apex:selectOptions>
+                    </apex:selectList>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel value="Important Notes"></apex:outputLabel>
+                    <apex:inputTextarea value="{!ord.Imp_Notes__c}" id="cimpnotes"/>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:outputLabel ></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <apex:outputLabel ></apex:outputLabel>
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel ></apex:outputLabel>
+                    <input type="button" value="Update Record" id="updateOrder" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:form>
+    </apex:pageblock>
+</apex:page>

@@ -1,0 +1,62 @@
+<apex:page showHeader="false" sidebar="false">
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+<head>
+<apex:stylesheet value="{!URLFOR($Resource.SLDS090,'assets/styles/salesforce-lightning-design-system-vf.css')}"/>
+<style>
+<!--
+.slds-form-element__label {
+    display: inline-block;
+    color: #54698d;
+    font-size: 0.80rem;
+    line-height: 1.5;
+    margin-right: 1rem;
+    margin-bottom: 0.25rem;
+    padding-right: 10;
+    padding-left: 10px;
+}
+.slds-input {
+    width:250px;
+}
+-->
+</style>
+
+</head>
+<body>
+<!-- Start Header -->
+<div class="slds-page-header" role="banner">
+  <div class="slds-media slds-media--center">
+    <div class="slds-media__figure">
+      <svg aria-hidden="true" class="slds-icon slds-icon-standard-opportunity">
+        <use xlink:href="/assets/icons/standard-sprite/svg/symbols.svg#opportunity"></use>
+      </svg>
+    </div>
+    <div class="slds-media__body">
+      <p class="slds-page-header__title slds-truncate slds-align-middle" title="Rohde Corp - 80,000 Widgets">Web to Lead Creation Module</p>
+      <p class="slds-text-body--small page-header__info">Create New Lead</p>
+    </div>
+  </div>
+</div>
+<!-- End header -->
+
+<div class="slds-form-element">
+ 
+  <div class="slds-form-element__control">
+      <label class="slds-form-element__label" for="text-input-01">First Name</label>
+    <input id="text-input-01" class="slds-input" type="text" placeholder="Placeholder Text" />
+  </div>
+  
+  <div class="slds-form-element slds-lookup" data-select="single">
+  <label class="slds-form-element__label" for="lookup-330">Account Name</label>
+      <div class="slds-form-element__control">
+        <div class="slds-input-has-icon slds-input-has-icon--right">
+          <svg aria-hidden="true" class="slds-input__icon">
+            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#search"></use>
+          </svg>
+          <input id="lookup-330" class="slds-lookup__search-input slds-input" type="search" placeholder="Search Accounts" aria-owns="lookup-330" role="combobox" aria-activedescendent="" aria-expanded="false" aria-autocomplete="list" />
+        </div>
+      </div>
+ </div>
+</div>
+</body>
+</html>
+</apex:page>

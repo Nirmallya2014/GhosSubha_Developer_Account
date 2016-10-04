@@ -7,6 +7,8 @@ public with sharing class AnimalLocator{
         String endPointUrl = 'https://th-apex-http-callout.herokuapp.com/animals/';
         String finalUrl = endPointUrl+animalInfo;  
         System.debug('@-----NirmallyaFinal Url------------------1112222@@'+finalUrl);
+        System.debug('@-----NirmallyaFinal Url------------------hbhffv@@'+finalUrl);
+        System.debug('@-----NirmallyaFinal Url------------------vdfhvh@@'+finalUrl);
         Http htp = new Http();
         HttpRequest req = new HttpRequest();
         req.setEndpoint(finalUrl);

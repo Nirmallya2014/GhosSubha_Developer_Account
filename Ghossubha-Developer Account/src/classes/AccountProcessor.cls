@@ -9,6 +9,9 @@ public class AccountProcessor {
         	
         	System.debug('Debug Changes After Build Success 100 1111 By Nirmallya 7 22');
         	System.debug('Debug Changes After Build Success 200 2222');
+        	
+        	
+        	System.debug('Last Change *****');
             List<Account> lstAccount = [select id, (select id from contacts) from account where id in :accountIds];
             for(Account acc : lstAccount ) {
                 List<Contact> lstCont = acc.contacts ;

@@ -6,10 +6,10 @@ public class AccountProcessor {
         if(accountIds.size() > 0) {
         	System.debug('new Changes');
         	System.debug('Debug Changes 2');
-            List<Account> lstAccount = [select id, Number_of_Contacts__c, (select id from contacts) from account where id in :accountIds];
+            List<Account> lstAccount = [select id, (select id from contacts) from account where id in :accountIds];
             for(Account acc : lstAccount ) {
                 List<Contact> lstCont = acc.contacts ;
-                acc.Number_of_Contacts__c = lstCont.size();
+                //acc.Number_of_Contacts__c = lstCont.size();
             }
             update lstAccount;
         }

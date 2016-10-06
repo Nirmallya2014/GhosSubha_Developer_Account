@@ -4,14 +4,6 @@ public class AccountProcessor {
         List<Account> listAccount = new List<Account>();
         Map<Id, Id> mapNoOfContact = new Map<Id, Id>();
         if(accountIds.size() > 0) {
-        	System.debug('new Changes');
-        	System.debug('Debug Changes 2');
-        	
-        	System.debug('Debug Changes After Build Success 100 1111 By Nirmallya 7 22');
-        	System.debug('Debug Changes After Build Success 200 2222');
-        	
-        	
-        	System.debug('Last Change *****');
             List<Account> lstAccount = [select id, (select id from contacts) from account where id in :accountIds];
             for(Account acc : lstAccount ) {
                 List<Contact> lstCont = acc.contacts ;

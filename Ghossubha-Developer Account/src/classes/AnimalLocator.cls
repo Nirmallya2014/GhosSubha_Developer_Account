@@ -6,6 +6,7 @@ public with sharing class AnimalLocator{
         webserviceInfo = new Map<String, String>();       
         String endPointUrl = 'https://th-apex-http-callout.herokuapp.com/animals/';
         String finalUrl = endPointUrl+animalInfo;  
+
         Http htp = new Http();
         HttpRequest req = new HttpRequest();
         req.setEndpoint(finalUrl);

@@ -4,7 +4,7 @@
     $(document).ready(function() {
         $('[id$=updateOrder]').on('click', function() {
             var orderInfo = {
-                "corderId"		: "{!$CurrentPage.parameters.orderId}",
+                "corderId"		: "{!JSENCODE($CurrentPage.parameters.orderId)}",
                 "cname" 		: $('[id$=cname]').val(),
                 "cphone" 		: $('[id$=cphone]').val(),
                 "caddress" 		: $('[id$=caddress]').val(),

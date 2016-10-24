@@ -1,6 +1,8 @@
 <apex:page controller="ObjectRetrievePractice" sidebar="false" showHeader="false">
+
   <!-- Fetch All Standard Object -->
   <apex:form id="TheForm1">
+      <apex:pagemessages />
         <apex:pageBlock title="All Objects Fetched Dynamically">
             <apex:outputLabel value="All Objects ">
                 <apex:selectList size="1">
@@ -13,6 +15,7 @@
   
   <!-- Fetch All Custom Object -->
   <apex:form id="TheForm2">
+      <apex:pagemessages />
         <apex:pageBlock title="All Custom Objects Fetched Dynamically">
             <apex:outputLabel value="All Custom Objects ">
                 <apex:selectList size="1">
@@ -25,37 +28,66 @@
    
   <!-- Select Object Its Field -->
   <apex:form id="TheForm3">
-        <apex:pageBlock >
-            <apex:pageBlockSection title="Select an Object" collapsible="false" columns="2">
-                 <apex:pageBlockSectionItem >
-                     <apex:outputLabel value="Select an object:"></apex:outputLabel>
-                     <apex:selectList value="{!objectName}" size="1" multiselect="false">
-                         <apex:selectOptions value="{!allObjNames}"></apex:selectOptions>
-                         <apex:actionSupport action="{!fetchFields}" event="onchange" reRender="fieldsPanel"/>  
-                     </apex:selectList>
-                 </apex:pageBlockSectionItem>
+  <apex:pagemessages />
+        <apex:pageBlock title="Select an Object">
+                <apex:pagemessages />
+                <apex:pageBlockSection collapsible="false" columns="2">
+                    <apex:outputLabel value="Select an object:"></apex:outputLabel>
+                    <apex:selectList value="{!objectName}" size="1" multiselect="false">
+                        <apex:selectOptions value="{!allObjNames}"></apex:selectOptions>
+                        <apex:actionSupport action="{!fetchFields}" event="onchange" reRender="fieldsPanel"/>  
+                    </apex:selectList>
+                </apex:pageBlockSection>
                  
-                 <apex:pageBlockSectionItem >
-                 <apex:outputPanel id="fieldsPanel">
+                 <apex:pageBlockSection id="fieldsPanel">
                      <apex:outputLabel value="Select Fields:"> </apex:outputLabel>
-                     <apex:selectList value="{!fields}" multiselect="true" size="20" >
-                         <apex:selectOptions value="{!lsps}">
-                         </apex:selectOptions>
+                     <apex:selectList value="{!selectedField}" size="5" >
+                         <apex:selectOptions value="{!lsps}"></apex:selectOptions>
+                         <apex:actionSupport action="{!fieldDetailsInfo}" event="onchange" reRender="fieldValueDetailsAll"/>
                      </apex:selectList>
-                     </apex:outputPanel>
-                 </apex:pageBlockSectionItem> 
-             </apex:pageBlockSection>
+                 </apex:pageBlockSection>
+                 
+                 <apex:pageBlockSection id="fieldValueDetailsAll" title="Selected Field Info">
+                 <apex:repeat value="{!fieldDetails}" var="key">
+                    <apex:outputLabel value="{!key}"/> 
+                    <apex:outputLabel value="{!fieldDetails[key]}"/>
+                 </apex:repeat>
+                 </apex:pageBlockSection>
+                 
          </apex:pageBlock>
     </apex:form>
     
+    <!-- Select Object and Display its Child Object -->
     <apex:form id="TheForm4">
-        <apex:pageBlock title="Display Account's Child Objects">
-            <apex:outputLabel value="Child Objects from Account ">
-                <apex:selectList size="1" value="{!parentObjectName}">
-                    <apex:selectoptions value="{!fetchChildRelationShip}"></apex:selectoptions>
-                    
+    <apex:pagemessages />
+        <apex:pageBlock title="Display Object and It's Child Objects, Required Fields">
+            <apex:pageBlockSection >
+                <apex:outputLabel value="Select an object:"></apex:outputLabel>
+                <apex:selectList value="{!objectName}" size="1" multiselect="false">
+                    <apex:selectOptions value="{!allObjNames}"></apex:selectOptions>
+                    <apex:actionSupport action="{!getfetchChildRelationShip}" event="onchange" reRender="ChildObjectPanel"/>  
                 </apex:selectList>
-            </apex:outputLabel>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="ChildObjectPanel">
+                <apex:outputLabel value="Child Objects"></apex:outputLabel>
+                <apex:selectList size="1" value="{!parentObjectName}">
+                    <apex:selectoptions value="{!childRelationShip}"></apex:selectoptions>
+                </apex:selectList>
+            
+                <apex:outputLabel value="Required Fields"></apex:outputLabel>
+                <apex:selectList value="{!selectedField}" size="5">
+                    <apex:selectoptions value="{!requiredFieldList}"></apex:selectoptions>
+                    <apex:actionSupport action="{!fieldDetailsInfo}" event="onchange" reRender="fieldValueDetails"/>
+                </apex:selectList>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection id="fieldValueDetails" title="Field Details">
+                <apex:repeat value="{!fieldDetails}" var="key">
+                    <apex:outputLabel value="{!key}"/> 
+                    <apex:outputLabel value="{!fieldDetails[key]}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
             
          </apex:pageBlock>
     </apex:form>

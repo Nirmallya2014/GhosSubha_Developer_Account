@@ -1,0 +1,6 @@
+<apex:page controller="SampleSOAPCall" sidebar="false" showHeader="false">
+<apex:form >
+    <apex:pageMessages />
+    <apex:commandButton action="{!invokeUpdateContactMDMMethod}" value="Click Me"/>
+</apex:form>
+</apex:page>

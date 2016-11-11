@@ -1,0 +1,350 @@
+<apex:page applyBodyTag="false" applyHtmlTag="false" standardStylesheets="false" showHeader="false" sidebar="false" docType="html-5.0">
+    <html lang="en" ng-app="MANULIFE.portal.App" class="no-js ng-cloak">
+        <head>
+            <!-- ******* START Analytics Code ************** -->
+			<script src="//assets.adobedtm.com/caa55bf3865be487a5b4dbd4e1effd4b7cf20ea0/satelliteLib-888ed6c93107d9cbece565e938399a0ee180deb3-staging.js"></script> 
+            <!-- ******* END Analytics Code ************** -->
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <title>Registration Customer Portal Manulife.ca</title>
+            <meta http-equiv="Pragma" content="no-cache" />
+            <meta http-equiv="Expires" content="-1" />
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+            <!-- Include stylesheet -->
+            <apex:stylesheet value="{!URLFOR($Resource.ManulifeVitalityAsset, 'css/styles.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.ManulifeVitalityAsset, 'css/customStyle.css ')}"/>
+
+            <!-- Include favicon -->
+            <link rel="apple-touch-icon" sizes="57x57" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-57x57.png')}" />
+            <link rel="apple-touch-icon" sizes="60x60" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-60x60.png')}" />
+            <link rel="apple-touch-icon" sizes="72x72" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-72x72.png')}" />
+            <link rel="apple-touch-icon" sizes="76x76" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-76x76.png')}" />
+            <link rel="apple-touch-icon" sizes="114x114" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-114x114.png')}" />
+            <link rel="apple-touch-icon" sizes="120x120" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-120x120.png')}" />
+            <link rel="apple-touch-icon" sizes="144x144" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-144x144.png')}" />
+            <link rel="apple-touch-icon" sizes="152x152" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-152x152.png')}" />
+            <link rel="apple-touch-icon" sizes="180x180" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-180x180.png')}" />
+            <link rel="icon" type="image/png')}" sizes="192x192"  href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/android-icon-192x192.png')}" />
+            <link rel="icon" type="image/png')}" sizes="32x32" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/favicon-32x32.png')}" />
+            <link rel="icon" type="image/png')}" sizes="96x96" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/favicon-96x96.png')}" />
+            <link rel="icon" type="image/png')}" sizes="16x16" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/favicon-16x16.png')}')}" />
+            <meta name="msapplication-TileColor" content="#2c2e2f" />
+            <meta name="theme-color" content="#2c2e2f" />
+            <meta name="msapplication-TileImage" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/ms-icon-144x144.png')}" />
+            <meta name="msapplication-square70x70logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/smalltile.png')}" />
+            <meta name="msapplication-square150x150logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/mediumtile.png')}" />
+            <meta name="msapplication-wide310x150logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/widetile.png')}" />
+            <meta name="msapplication-square310x310logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/largetile.png')}" />
+        </head>
+        
+        <body class="page-body account-status-page" mnlf-modal-status="">
+            <div class="page-wrapper">
+                <header role="banner">
+                    <div class="hidden-xs skipnav">
+                        <a href="#mainContent">Skip main navigation</a>
+                    </div>
+                    <div class="header-wrapper">
+                        <div class="header-container">
+                            <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Home/!ut/p/b1/hY7LDoIwFET_iF5oy2MJUV4CSnjaDUElBBVKxEDw60XjVp3dJGdOBjGUI9aVY1OX94Z35fXVmVz4rmFgkxJQKZXA8egqdLEigiUtwH4B4Et0-LfPUA6kiM5w227mC59Puj3UPAIxiBM-PKDYwTD5qRlaI1PGbOHZW2k5kK7j1FUJSCY4NAIiKx62QvwBflwKbN5WyEWsObTCdGwFELCigYwXGSZEI7KKoqpDfZuMvT3VT0j-zrU!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/" class="manulife-brand" mnlf-web-view-logo="true">
+                                <img src="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/manulife_logo_fr.svg')}" alt="Manuvie Compagnie Logo" />
+                            </a>
+                            <nav aria-label="Header navigation" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Home/!ut/p/b1/hY7LDoIwFET_iF5oy2MJUV4CSnjaDUElBBVKxEDw60XjVp3dJGdOBjGUI9aVY1OX94Z35fXVmVz4rmFgkxJQKZXA8egqdLEigiUtwH4B4Et0-LfPUA6kiM5w227mC59Puj3UPAIxiBM-PKDYwTD5qRlaI1PGbOHZW2k5kK7j1FUJSCY4NAIiKx62QvwBflwKbN5WyEWsObTCdGwFELCigYwXGSZEI7KKoqpDfZuMvT3VT0j-zrU!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/" class="hidden-xs">Accueil</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contact-us hidden-xs" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">Contactez nous</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="faq hidden-xs" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="/VitalityRegistration/Vitality_Registration_Success?email={!$CurrentPage.parameters.email}&langCode=en" lang="">English</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+                <div class="content-wrapper">
+                    <div class="content-container" role="main">
+                        <div class="registration-request-container">
+                            <h1 id="mainContent">Espace Client Manuvie</h1>
+                            <h2 class="elt-separator">Nous avons envoyé un courriel à l’adresse</h2>
+                            <p class="medium">
+                                <strong>{!$CurrentPage.parameters.email}</strong>
+                            </p>
+                            <div class="row">
+                                <p class="medium col-md-10">Cliquez sur le lien fourni dans le courriel pour activer votre compte. Par mesure de sécurité, le lien expire après <strong>24 heures</strong>.</p>
+                                <p class="medium col-md-10">Si vous ne trouvez pas ce courriel, vérifiez votre dossier de courriels indésirables.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer role="contentinfo" mnlf-web-view="true">
+                    <div class="footer-wrapper">
+                        <div class="footer-container">
+                            <nav class="visible-xs" aria-label="Navigation pied de page" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Home/!ut/p/b1/hY7LDoIwFET_iF5oy2MJUV4CSnjaDUElBBVKxEDw60XjVp3dJGdOBjGUI9aVY1OX94Z35fXVmVz4rmFgkxJQKZXA8egqdLEigiUtwH4B4Et0-LfPUA6kiM5w227mC59Puj3UPAIxiBM-PKDYwTD5qRlaI1PGbOHZW2k5kK7j1FUJSCY4NAIiKx62QvwBflwKbN5WyEWsObTCdGwFELCigYwXGSZEI7KKoqpDfZuMvT3VT0j-zrU!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">Accueil</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contact-us" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">Contactez nous</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="faq" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">FAQ</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer-left-nav" aria-label="Navigation pied de page" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Manulifefinancial/About%20us/!ut/p/b1/jVLLcqMwEPwWf0AigRDCR1iweQhcGMxDFwpjh-VpYwhgvj5Oai85xJu5TVX3TE_3AAYiwNp0LPJ0KC5tWn_2TExsU1HQBgtw6yMVGv4WHSjxeVkRH4D4AYA_lAy_8yWMeWhQrLomIhzc8iAEkR9Ps9obkyr_SWARLqpbuXMplihehrpQi8C6LcndjBtNaFsXN41TS9L9ZMvewN7wadMcy4AvlrycbJQtUUIna1eu2VpUB0n_-z5Yty7ijmS7D2VxZn1zZ-V75bpYe2Gb23yrfeVc15bacCiXg-TKRflq9e-uH4XD3_myNWCg-YEpCZDfQAN7UBAJRVsX_Y7_xLj_8EPAviDPFHwBnkX3PDwIHP3SnIEJWHFsXqeseYWviKyhiB7bkCCsBVEC3rkF8WMQ-VHtHgIfRFBIvPJ-NZZq2ZeLC51K4ryjNtlUg341zR5lhkMVw1sC6hyE2Sv3ju-7M8zWXLBxNZmmeGcdVt_liEQiHCZQlHgecTwCQRlD8vltmuaNVcNoX4_-9ZzJxgmlWbinSV-fBaQQ7eK65ik8Cj20l7ZAxlhZirMnOobWBQpKKksvQadkMO9gf5OlftI9K-7MvO8JMYzlsFPj0Xm3cWezQ3kfKsnRkzKUzWuYqhYq3tZvp87sBis7Ib-KYp1frB3mcWYVAlMYyaIN3ekvbXK2-dFVZkwDAVybw2hZVNzrU85J0-oDw9uKDA!!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">À propos de nous</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/careers/index/0,,lang=fr&navId=660000,00.html">Carrières</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/home/index/0,,lang=fr,00.html">International</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer-right-nav" aria-label="Navigation pied de page" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/article/index/0,,catId=670003&artId=148052&lang=fr,00.html">Accessibilité</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Manulifefinancial/privacy%20policy/!ut/p/b1/jVLLkqJAEPwWP4ChoXkewQZsHi1og8DFYEQQFEVQAb9-3Ym9zGHcqVtFZFZlZhWbsjGbnrNHVWa36nLOTn_7VNp6tq5DUxSARSECmFowdGXKa7r0AiQvAPihNPCdr4giD7ArosCGMgcsnt2wMU2GEfV4QNp8C6rNs1tleLl1vPxMdu0QcPQYoPCs-OUlbnPitglO045EfKmcDun5dney63CyJ3dZTOORt0lXgBjd-_oRVcuuTW5TYBUhE0WmCml2YujN08LrvLgbIVOvyxLoR2VkmsVQL67MHpueyvSfsN2YS202--fvRwPgd_lYGEQGjWxFALwJsLgGgiS70Arg7_hvAvwPf8OmX5B3Cr4A7074_oiAJYtLs2dtNq0-m49h13yADyirQIKvbVAQVEFS2PX-zCavQfKPaleApWwMhO26nlr8PD5XNZgmz7UxQXjwXNOjoej0ne55XY7XTw-SOvWJUXKEEp_rVS4yA0NDyXikyey7HElWZE6UgaTwPOR4yEZ1Iqjo4g0Ibx7D3RnHxRLKNdBS6h0q42B_ahES_My4Hv3omhN52OYMtfJ9L3U7LTBdJwNF0vSidhfGVosC78JoeDq3OJCD3cmJOX_16KVHq82XJ1LU9ibr7GnZVG4DGAXlIymuRCYG1nnFV1RGFy6pmbZFpzFWbzrXezCBYDoEMRgebeGT1x_7KsL0xtBSR1snQsHrO9smfDiOK60WQ8kpw-wPshUjEw!!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">Confidentialité</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/article/index/0,,lang=fr&catId=670003,00.html">Légal</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Sitemap/!ut/p/b1/jZBfT4NAEMS_ETtwd0AfWy3_i0Uo1HshqA1BhTNiIPXTS5s-mRS7b5vMb2d2SNKeZFcNTV19N6qrPk67NMtNsFoxR3DYd8yAH8Vpgm0GrPVJ8DQJcGWW-MMLceLFfRIwS4drUEF78DJ9w9dDeHxXx9el19cqhR5nO9X_oNyiHze5k7iDtIbi4nf1IG7L6_rI11ke2ByGA1-k4KYVMTdht_EzD_3DFyTPkrkEZ8FcpfOlgmJPtQcKSDbPrTa-tBo0Zi1gssmNcb7gpk3poaPPdjeEYWQ-emP9C3ZiJiY!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">Plan du site</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            
+            <!-- Modal for Contact Us -->
+            <div class="modal modal-contact fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-contact-content">
+                        <div class="modal-header">
+                            <button type="button" id="contactCloseBtn" data-ng-click="close();" class="close" aria-label="Close">
+                                <span aria-hidden="true" class="manupicto">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="contactModalTitle">Mon Hub</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p class="link-manupicto medium">
+                             Vous avez une question?  Consultez notre &nbsp;
+                                <a href="#" class="contact-us-faq-toggle" mnlf-transition-modal="" data-controller="modalController" data-focus-after-selector="body" role="button">
+                                    foire aux questions
+                                </a>
+                            </p>
+        					Vous pouvez aussi : 
+                            <div class="info-group">
+                                <a href="tel:18886268543" role="button" aria-label="Contact Manulife by phone at 18886268543" class="visible-xs call-to-action link-manupicto">
+                                    <span class="manupicto manupicto-contact" aria-hidden="true"></span>
+                                    <strong>18886268543</strong>
+                                </a>
+        
+                                <span class="hidden-xs call-to-action link-manupicto" aria-label="Contact Manulife by phone at 18886268543">
+                                    <span class="manupicto manupicto-contact" aria-hidden="true"></span>
+                                    <strong>18886268543</strong>
+                                </span>
+        
+                                <p class="link-manupicto">
+                                    Nous sommes à votre disposition du lundi au vendredi, entre 8 h 30 et 17 h 00, HNE.
+                                    <a href="#" role="button" class="link-manupicto ng-hide">
+                                        <span class="manupicto manupicto-arrow-left" aria-hidden="true"></span>
+                                        Nous sommes à votre disposition du lundi au vendredi, entre 8 h 30 et 17 h 00, HNE.
+                                    </a>
+                                </p>
+                            </div>
+        
+                            <div class="info-group">
+                                <a href="mailto:ManuvieVitalite@manuvie.com" role="button" aria-label="Contact manulife.ca by email" class="call-to-action link-manupicto">
+                                    <span class="manupicto manupicto-circled-email" aria-hidden="true"></span>
+                                    <strong>ManuvieVitalite@manuvie.com</strong>
+                                </a>
+                                <p>Nous répondons habituellement dans un délai d’un jour ouvrable.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Pas ce que vous cherchiez?</p>
+                            <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Manulifefinancial/!ut/p/b1/jZPJkqJAEIafxQfopqqgWI7QLIIFChYKXAhxQUEWhWF7-nZ65jIHdfKWEd8fmfn_kUzEBExU7rpLumsvVbm7_u4jPrYtRWF1zAGDsiowqcH6RKBIVvgHED4A8KRk8K9exBgBk2DVtVgBAgP91T8FwP_NN0yw0ejGEjmAdGDiNeB4gbCGy77Tb5mAhv2gVnavatuur0mknM00lDa01xfXLHeo43I33GFdOJC244-l2jeNRe61jHaqtc-Gscpr_wtdxwuS1BMuXLj1vZOYpdKBKi0p0FITUUMW-ekojvW-8nCaLSUJarCK2bbbNkPcaPpyxartffhYp9SOiYLJknb-7J0_6P190Q_yyqEf4FWEr0MEjDOviiMTPjDh6S4eYCgTAC5eZ2NtTvnkZWCwnMQH9t3sbaIBOpmg1UboqPawBvnk5Cl0Mn-wfXGCewludFeTDYGvduGMsZjokhSf_b74BJ-8IAoQC4AXEWIhYpkN3Td_MjWD8w2ryiJO9m10lEntJ26V-8tBC5UtPrnydDhlUFKnrrGE1SjLi1ubJIPJsyv57lkg3VbTPJeNNgul80I-6SF5_AcfZqsmNT1IA80uq48ymqOV2JerxBDijPs6DmJ2LMpAkebBLwVzLajsGVMXvu93hPfmPRR7efYNArxhEA!!/dl4/d5/L0lDUmlTUSEhL3dHa0FKRnNBLzRKVXFDQSEhL2Vu/" class="link-manupicto" aria-role="link" target="_blank" aria-label="View all Manulife contacts (Please note: this link opens the page in a new browser window.)">
+                                <span class="manupicto manupicto-arrow-left" aria-hidden="true"></span>
+                                Voir la section Communiquez avec nous de Manuvie.
+                            </a>
+        
+                            <a href="#" data-ng-click="close();" aria-label="Close" role="button" mnlf-delegate-focus="" data-element="#contactCloseBtn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal for FAQ -->
+            <div class="modal modal-faq fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="contactFaqTitle">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-faq-content">
+                        <div class="modal-header">
+                            <button type="button" id="faqCloseBtn" class="close" data-ng-click="close();" aria-label="Close">
+                                <span aria-hidden="true" class="manupicto">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="contactFaqTitle">FAQ – Mon carrefour</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                <span>J’ai oublié mon mot de passe.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent, et nous pouvons vous aider!</p>
+                                            <p><a href="{!$Label.Vitality_ResetPwdSiteURLFrench}">Mot de passe oublié</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <span>Je souhaite modifier mon mot de passe.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Cliquez sur Mot de passe oublié et suivez les étapes.</p>
+                                            <p><a href="{!$Label.Vitality_ResetPwdSiteURLFrench}">Mot de passe oublié</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                <span>Mon compte est verrouillé.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent. Il vous suffit de cliquer sur Mot de passe oublié et de suivre les étapes.</p>
+                                            <p><a href="{!$Label.Vitality_ResetPwdSiteURLFrench}">Mot de passe oublié</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                <span>Je n’ai pas reçu le courriel destiné à réinitialiser mon mot de passe.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent. Il vous suffit de communiquer avec nous.</p>
+                                            <p><a href="#" class="faq-contact-us-toggle">Contactez nous</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                <span>Que dois-je faire si je ne me souviens plus de l’adresse courriel que je dois utiliser pour ouvrir une session?</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Nous pouvons vous aider. Il nous faut seulement quelques renseignements avant de commencer.</p>
+                                            <p><a href="#" class="faq-contact-us-toggle">Contactez nous</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                <span>Comment puis-je créer un compte?</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>C’est facile. Il vous suffit de cliquer sur Créer un compte et de suivre les étapes.</p>
+                                            <p><a href="{!$Label.Vitality_RegistrationSiteURLFrench}">Créer un compte</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                                <span>Je n’arrive pas à créer mon compte.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent. Nous avons seulement besoin de quelques renseignements.</p>
+                                            <p><a href="#" class="faq-contact-us-toggle">Créer un compte</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" data-ng-click="close();" role="button" mnlf-delegate-focus="" data-element="#faqCloseBtn"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="modal-backdrop fade"></div>
+			
+            <script src="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/libs/jquery.min.js')}" type="text/javascript"></script>
+            <apex:includeScript value="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/vendors.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/manulife.js')}"/>
+            <script src="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/plugins/passwordStrength.js')}" type="text/javascript"></script>
+            <script src="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/custom/main.js')}" type="text/javascript"></script>
+            
+            <script>
+            $(document).ready(function() {
+                	window.history.replaceState( {} , 'Vitality_Registration_Success', '/VitalityRegistration/Vitality_Registration_Success_Fr' ); 
+            });
+            </script>
+            <!-- ******* START Analytics Code ************** -->
+                <script type="text/javascript">
+                        var s_account="manuconsumerportal"
+                        if(s) {
+                            s.pageName="Vitality Registration";
+                            s.server= window.location.hostname;
+                            s.channel="Registration Page";				
+                            s.prop8="ConPort"; 	 
+                            s.prop13="Registration Page”;
+                            s.events="event54";  
+							s.eVar9="ConPort"; 
+                        }
+                </script>
+            	<script type="text/javascript">_satellite.pageBottom();</script> 
+        	<!-- ******* END Analytics Code ************** -->
+        </body>
+    </html>
+</apex:page>

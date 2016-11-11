@@ -3,29 +3,20 @@
   <!-- Fetch All Standard Object -->
   <apex:form id="TheForm1">
       <apex:pagemessages />
-        <apex:pageBlock title="All Objects Fetched Dynamically">
+        <apex:pageBlock title="All Objects & Custom Objects Fetched Dynamically">
             <apex:outputLabel value="All Objects ">
                 <apex:selectList size="1">
                     <apex:selectoptions value="{!allStdObjNames}"></apex:selectoptions>
                 </apex:selectList>
             </apex:outputLabel>
-        </apex:pageBlock> 
-  </apex:form>
-
-  
-  <!-- Fetch All Custom Object -->
-  <apex:form id="TheForm2">
-      <apex:pagemessages />
-        <apex:pageBlock title="All Custom Objects Fetched Dynamically">
             <apex:outputLabel value="All Custom Objects ">
                 <apex:selectList size="1">
                     <apex:selectoptions value="{!allCustomObjNames}"></apex:selectoptions>
                 </apex:selectList>
             </apex:outputLabel>
-        </apex:pageBlock>
-   </apex:form>
+        </apex:pageBlock> 
+  </apex:form>
 
-   
   <!-- Select Object Its Field -->
   <apex:form id="TheForm3">
   <apex:pagemessages />
@@ -88,7 +79,7 @@
                     <apex:outputLabel value="{!fieldDetails[key]}"/>
                 </apex:repeat>
             </apex:pageBlockSection>
-            
          </apex:pageBlock>
     </apex:form>
+    
 </apex:page>

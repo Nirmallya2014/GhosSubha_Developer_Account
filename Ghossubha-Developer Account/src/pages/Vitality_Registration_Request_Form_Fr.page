@@ -1,0 +1,622 @@
+<apex:page standardStylesheets="false" language="fr" applyBodyTag="false" applyHtmlTag="false" showHeader="false" sidebar="false" controller="Vitality_RegistrationRequestController" docType="html-5.0" action="{!handleTranslation}">
+    <html class="no-js ng-scope" lang="fr" ng-app="MANULIFE.portal.Registration">
+        <head>
+            <!-- ******* START Analytics Code ************** -->
+			<script src="//assets.adobedtm.com/caa55bf3865be487a5b4dbd4e1effd4b7cf20ea0/satelliteLib-888ed6c93107d9cbece565e938399a0ee180deb3-staging.js"></script> 
+            <!-- ******* END Analytics Code ************** -->
+                
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <title>Inscription Customer Portal Manulife.ca</title>
+            <meta http-equiv="Pragma" content="no-cache" />
+            <meta http-equiv="Expires" content="-1" />
+            <meta name="description" content="" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+            <!-- Include stylesheet -->
+            <apex:stylesheet value="{!URLFOR($Resource.ManulifeVitalityAsset, 'css/styles.css')}"/>
+            <apex:stylesheet value="{!URLFOR($Resource.ManulifeVitalityAsset, 'css/customStyle.css ')}"/>
+
+            <!-- Include favicon -->
+            <link rel="apple-touch-icon" sizes="57x57" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-57x57.png')}" />
+            <link rel="apple-touch-icon" sizes="60x60" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-60x60.png')}" />
+            <link rel="apple-touch-icon" sizes="72x72" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-72x72.png')}" />
+            <link rel="apple-touch-icon" sizes="76x76" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-76x76.png')}" />
+            <link rel="apple-touch-icon" sizes="114x114" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-114x114.png')}" />
+            <link rel="apple-touch-icon" sizes="120x120" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-120x120.png')}" />
+            <link rel="apple-touch-icon" sizes="144x144" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-144x144.png')}" />
+            <link rel="apple-touch-icon" sizes="152x152" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-152x152.png')}" />
+            <link rel="apple-touch-icon" sizes="180x180" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/apple-icon-180x180.png')}" />
+            <link rel="icon" type="image/png')}" sizes="192x192"  href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/android-icon-192x192.png')}" />
+            <link rel="icon" type="image/png')}" sizes="32x32" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/favicon-32x32.png')}" />
+            <link rel="icon" type="image/png')}" sizes="96x96" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/favicon-96x96.png')}" />
+            <link rel="icon" type="image/png')}" sizes="16x16" href="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/favicon-16x16.png')}')}" />
+            <meta name="msapplication-TileColor" content="#2c2e2f" />
+            <meta name="theme-color" content="#2c2e2f" />
+            <meta name="msapplication-TileImage" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/ms-icon-144x144.png')}" />
+            <meta name="msapplication-square70x70logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/smalltile.png')}" />
+            <meta name="msapplication-square150x150logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/mediumtile.png')}" />
+            <meta name="msapplication-wide310x150logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/widetile.png')}" />
+            <meta name="msapplication-square310x310logo" content="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/metas/largetile.png')}" />
+        </head>
+        
+        <body class="page-body request-form-page registration" mnlf-modal-status="" mnlf-no-cache="">
+            
+            <input type="hidden" value="fr_CA" id="hiddenLangCode" />
+            <div class="page-wrapper">
+                <header role="banner">
+                    <div class="hidden-xs skipnav">
+                        <a href="#mainContent">Skip main navigation</a>
+                    </div>
+                    <div class="header-wrapper">
+                        <div class="header-container">
+                            <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Home/!ut/p/b1/hY7LDoIwFET_iF5oy2MJUV4CSnjaDUElBBVKxEDw60XjVp3dJGdOBjGUI9aVY1OX94Z35fXVmVz4rmFgkxJQKZXA8egqdLEigiUtwH4B4Et0-LfPUA6kiM5w227mC59Puj3UPAIxiBM-PKDYwTD5qRlaI1PGbOHZW2k5kK7j1FUJSCY4NAIiKx62QvwBflwKbN5WyEWsObTCdGwFELCigYwXGSZEI7KKoqpDfZuMvT3VT0j-zrU!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/" class="manulife-brand" mnlf-web-view-logo="true">
+                                <img src="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/manulife_logo_fr.svg')}" alt="Manuvie Compagnie Logo" />
+                            </a>
+                            <nav aria-label="Header navigation" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Home/!ut/p/b1/hY7LDoIwFET_iF5oy2MJUV4CSnjaDUElBBVKxEDw60XjVp3dJGdOBjGUI9aVY1OX94Z35fXVmVz4rmFgkxJQKZXA8egqdLEigiUtwH4B4Et0-LfPUA6kiM5w227mC59Puj3UPAIxiBM-PKDYwTD5qRlaI1PGbOHZW2k5kK7j1FUJSCY4NAIiKx62QvwBflwKbN5WyEWsObTCdGwFELCigYwXGSZEI7KKoqpDfZuMvT3VT0j-zrU!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/" class="hidden-xs">Accueil</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contact-us hidden-xs" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">Contactez nous</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="faq hidden-xs" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">FAQ</a>
+                                    </li>
+                                    <li>
+                                        <a href="/VitalityRegistration/Vitality_Registration_Request_Form?langCode=en" lang="">English</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+                
+                <div class="content-wrapper" ng-controller="registrationController">
+                    <div class="content-container" role="main">
+                        <h1 id="mainContent">Espace Client Manuvie</h1>
+                        <div class="form-separator">
+                            <div class="form-introduction">
+                                <div>
+                                    <h2>Création de votre compte (Étape 1 de 2)</h2>
+                                    <p><a target="_blank" href="{!$Label.Vitality_ISAMLoginUrlFr}">Vous avez déjà un compte?<span class="offscreen">Opens a new window</span></a></p>
+                                    <p class="medium">Entrez les renseignements demandés, puis cliquez sur « Suivant ». Vous pourrez choisir votre mot de passe dans la fenêtre qui s’affichera.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-wrapper">
+                            <form name="registerForm" mnlf-aria-validation="" class="" data-ng-class="{'has-errors': errorServer}" role="form" autocomplete="off" novalidate="true">
+                                <input ng-init="errorSystemPageUri='/fr/error-system.html'" type="hidden" ng-model="errorSystemPageUri" />
+                                <input ng-init="language='fr'" type="hidden" ng-model="language" />
+        
+                                <div class="error-wrapper ng-hide" role="alert" data-ng-show="errorServer" aria-live="assertive">
+                                    <div class="alert alert-danger">
+                                        <h3 tabindex="-1">Désolé nous n’avons pas été capables de créer votre compte.</h3>
+                                        <p>Veuillez vous assurer que l’information ci-dessous correspond avec ce qui apparaît sur votre [nom du document].</p>
+                                    </div>
+                                </div>
+        
+                                <div class="row fullname" data-ng-class="{'has-error': (registerForm.lastname.$touched && !registerForm.lastname.$valid)}">
+                                    <div class="form-group col-sm-6">
+                                        <label for="firstname" class="control-label">Prénom (facultatif)</label>
+                                        <input type="text" data-ng-model="firstname" id="firstname" name="firstname" class="form-control neutral-error" data-ng-class="{'ng-invalid': errorServer.firstname}" data-ng-required="false" aria-required="false" aria-invalid="false" />
+                                    </div>
+                                    <div class="form-group col-sm-6">
+                                        <label for="lastname" class="control-label">Nom de famille</label>
+                                        <input aria-describedby="lastname-error" onblur="checkFirst(event)" type="text" manulife-lastname-validator="true" data-ng-model="lastname" id="lastname" name="lastname" class="form-control" data-ng-class="{'ng-invalid': errorServer.lastname}" data-ng-required="true" aria-required="true" aria-invalid="false" maxlength="80" size="80" />
+                                        
+                                        <div tabindex="0" id="lastname-error" data-ng-show="(!registerForm.lastname.$valid && registerForm.lastname.$touched)" class="col-sm-12 col-xs-12 text-danger error-context-msg" role="status" aria-live="polite">
+                                            <!-- <span aria-label="Error" class="manupicto manupicto-warning"></span> -->
+                                            <span class="manupicto error-message-icon"><img alt="error message" src="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/error.png')}" /></span>
+                                            <p data-ng-if="registerForm.lastname.$error.required && registerForm.lastname.$touched">Il manque quelque chose. Assurez-vous d’avoir fourni tous les renseignements demandés.</p>
+                                            <p data-ng-if="(registerForm.lastname.$error.lastnameformat && registerForm.lastname.$touched)">Il semble y avoir un problème. Assurez-vous d’avoir entré tous les renseignements correctement.</p>
+                                        </div>
+                                    </div>
+                                </div>
+        
+                                <div class="row date-of-birth" data-mnlf-group-focus-outside="true" data-ng-model="registerForm.dateApplyValidation" data-ng-class="{'has-error': registerForm.dateApplyValidation && (!registerForm['birthdate-year'].$valid || !registerForm['birthdate-month'].$valid || !registerForm['birthdate-day'].$valid || !registerForm.isDateValid)}">
+                                    <div class="col-sm-7 col-xs-12 ng-pristine ng-untouched ng-valid ng-binding ng-isolate-scope" data-mnlf-date-validator="true" data-empty="registerForm.isDateEmpty" data-form="registerForm" data-prefix="birthdate" data-ng-model="registerForm.isDateValid" aria-invalid="false">
+                                        <label for="birthdate-year" class="control-label">Date de naissance</label>
+                                        <div class="row">
+                                            <div class="form-group col-sm-4 col-xs-4">
+                                                <input aria-describedby="dob-error" onblur="checkFirst(event)" type="text" data-ng-required="true" data-mnlf-year-validator="true" aria-label="year" aria-required="true" aria-invalid="false" data-ng-model="birthdateYear" id="birthdate-year" name="birthdate-year" placeholder="aaaa" class="form-control" maxlength="4" />
+                                            </div>
+                                            <div class="form-group col-sm-5 col-xs-5" data-mnlf-custom-select="true">
+                                                <select aria-describedby="dob-error" onblur="checkFirst(event)" aria-label="Mois" data-ng-model="birthdateMonth" data-ng-required="true" aria-required="true" aria-invalid="false" name="birthdate-month" id="birthdate-month">
+                                                    <optgroup label="Mois" mnlf-opt-group-mobile="true">
+                                                        <option value="" selected="selected" style="display: none;">Mois</option>
+                                                        <option value="01">janvier</option>
+                                                        <option value="02">février</option>
+                                                        <option value="03">mars</option>
+                                                        <option value="04">avril</option>
+                                                        <option value="05">mai</option>
+                                                        <option value="06">juin</option>
+                                                        <option value="07">juillet</option>
+                                                        <option value="08">août</option>
+                                                        <option value="09">septembre</option>
+                                                        <option value="10">octobre</option>
+                                                        <option value="11">novembre</option>
+                                                        <option value="12">décembre</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="form-group col-sm-3 col-xs-3">
+                                                <input aria-describedby="dob-error" onblur="checkFirst(event)" title="Jour" data-ng-model="birthdateDay" data-mnlf-day-validator="true" data-ng-required="true" aria-label="day" aria-required="true" aria-invalid="false" type="text" id="birthdate-day" name="birthdate-day" placeholder="jj" class="form-control" maxlength="2" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div tabindex="0" id="dob-error" data-ng-show="registerForm.dateApplyValidation && (!registerForm['birthdate-year'].$valid || !registerForm['birthdate-month'].$valid || !registerForm['birthdate-day'].$valid || !registerForm.isDateValid)" class="col-sm-5 col-xs-12 text-danger error-context-msg" role="status" aria-live="polite">
+                                        <!-- <span aria-label="Error" class="manupicto manupicto-warning"></span> -->
+                                        <span class="manupicto error-message-icon"><img alt="error message" src="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/error.png')}" /></span>
+                                        <p data-ng-if="registerForm.isDateEmpty">Il manque quelque chose. Assurez-vous d’avoir fourni tous les renseignements demandés.</p>
+                                        <p data-ng-if="!registerForm.isDateEmpty && (!registerForm.isDateValid || !registerForm['birthdate-year'].$valid || !registerForm['birthdate-month'].$valid || !registerForm['birthdate-day'].$valid)">Il semble y avoir un problème. Assurez-vous d’avoir entré tous les renseignements correctement.</p>
+                                    </div>
+                                </div>
+        
+                                <div class="row" id="policyNumberRow" data-ng-class="{'has-error': (registerForm.policyNumber.$touched && !registerForm.policyNumber.$valid)}">
+                                    <div class="form-group col-sm-3 col-xs-7 policy-group">
+                                        <label for="policyNumber" class="control-label">Numéro de contrat</label>
+                                        <input aria-describedby="policynum-error" onblur="checkFirst(event)" type="text" data-mnlf-policy-number-validator="true" data-ng-model="policyNumber" data-ng-required="true" aria-required="true" aria-invalid="false" name="policyNumber" id="policyNumber" class="form-control" maxlength="20" />
+                                                                                             <a href="/" mnlf-tooltip="true" role="button" class="btn btn-default btn-primary tooltip-btn ng-isolate-scope" tabindex="0" data-container="#policyNumberRow" data-original-title="Votre numéro de contrat se trouve dans le coin supérieur droit de votre trousse de bienvenue au programme Manuvie <i>Vitalité</i>. Appuyez sur la touche de Entrée pour fermer l’astuce.">
+                                            <span class="manupicto manupicto-question-mark" aria-hidden="true"></span>
+                                            <span class="sr-only">Voir les informations sur le numéro de police</span>
+                                        </a>
+                                    </div>
+                                    <div tabindex="0" id="policynum-error" data-ng-show="registerForm.policyNumber.$touched && (!registerForm.policyNumber.$valid)" class="col-sm-6 col-xs-12 text-danger error-context-msg" role="status" aria-live="polite">
+                                        <!-- <span aria-label="Error" class="manupicto manupicto-warning"></span> -->
+                                        <span class="manupicto error-message-icon"><img alt="error message" src="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/error.png')}" /></span>
+                                        <p data-ng-if="registerForm.policyNumber.$error.required">Il manque quelque chose. Assurez-vous d’avoir fourni tous les renseignements demandés.</p>
+                                        <p data-ng-if="registerForm.policyNumber.$error.policyNumber">Il semble y avoir un problème. Assurez-vous d’avoir entré tous les renseignements correctement.</p>
+                                    </div>
+                                </div>
+        
+                                <div class="row" data-ng-class="{'has-error': (registerForm.email.$touched && !registerForm.email.$valid)}">
+                                    <div class="form-group col-sm-7">
+                                        <label for="email" class="control-label">Adresse de courriel (elle vous servira pour entrer dans le site)</label>
+                                        <input aria-describedby="email-error" onblur="checkFirst(event)" type="email" data-mnlf-domain-validator="true" data-mnlf-lock-keyboard="32,222" data-ng-required="true" aria-required="true" aria-invalid="false" data-ng-model="email" name="email" id="email" class="form-control" maxlength="254" />
+                                    </div>
+                                    <div tabindex="0" id="email-error" class="col-sm-5 col-xs-12 text-danger error-context-msg" data-ng-show="!registerForm.email.$valid && registerForm.email.$touched" role="status" aria-live="polite">
+                                        <!-- <span aria-label="Error" class="manupicto manupicto-warning"></span> -->
+                                        <span class="manupicto error-message-icon"><img alt="error message" src="{!URLFOR($Resource.ManulifeVitalityAsset, 'img/error.png')}" /></span>
+                                        <p data-ng-if="registerForm.email.$error.required">Il manque quelque chose. Assurez-vous d’avoir fourni tous les renseignements demandés.</p>
+                                        <p data-ng-if="registerForm.email.$error.email || registerForm.email.$error.domain">Il semble y avoir un problème. Assurez-vous d’avoir entré tous les renseignements correctement.</p>
+                                    </div>
+                                </div>
+        
+                                <div class="row submit-row">
+                                    <div class="col-sm-12">
+                                        <p>En cliquant sur « Suivant », vous reconnaissez comprendre et accepter les <a id="termsLink" href="/fr/modals/terms.html" mnlf-modal="" data-controller="modalController" data-focus-after-selector="#termsLink">conditions</a></p>
+                                    </div>
+        
+                                    <div class="col-sm-4">
+                                        <input type="submit" id="btnSubmit" data-ng-disabled="submitDisabled || !registerForm.$valid" value="Suivant" class="btn btn-primary btn-block" />
+                                        <span class="processing" ng-hide="!submitDisabled" aria-live="polite" role="alert" aria-label="Element visible when request server is processing">
+                                            <div class="cssload-container">
+                                                <div class="cssload-speeding-wheel"></div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                
+                <footer role="contentinfo" mnlf-web-view="true">
+                    <div class="footer-wrapper">
+                        <div class="footer-container">
+                            <nav class="visible-xs" aria-label="Navigation pied de page" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Home/!ut/p/b1/hY7LDoIwFET_iF5oy2MJUV4CSnjaDUElBBVKxEDw60XjVp3dJGdOBjGUI9aVY1OX94Z35fXVmVz4rmFgkxJQKZXA8egqdLEigiUtwH4B4Et0-LfPUA6kiM5w227mC59Puj3UPAIxiBM-PKDYwTD5qRlaI1PGbOHZW2k5kK7j1FUJSCY4NAIiKx62QvwBflwKbN5WyEWsObTCdGwFELCigYwXGSZEI7KKoqpDfZuMvT3VT0j-zrU!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">Accueil</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="contact-us" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">Contactez nous</a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="faq" mnlf-modal="" data-controller="modalController" data-focus-after-selector="body">FAQ</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer-left-nav" aria-label="Navigation pied de page" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Manulifefinancial/About%20us/!ut/p/b1/jVLLcqMwEPwWf0AigRDCR1iweQhcGMxDFwpjh-VpYwhgvj5Oai85xJu5TVX3TE_3AAYiwNp0LPJ0KC5tWn_2TExsU1HQBgtw6yMVGv4WHSjxeVkRH4D4AYA_lAy_8yWMeWhQrLomIhzc8iAEkR9Ps9obkyr_SWARLqpbuXMplihehrpQi8C6LcndjBtNaFsXN41TS9L9ZMvewN7wadMcy4AvlrycbJQtUUIna1eu2VpUB0n_-z5Yty7ijmS7D2VxZn1zZ-V75bpYe2Gb23yrfeVc15bacCiXg-TKRflq9e-uH4XD3_myNWCg-YEpCZDfQAN7UBAJRVsX_Y7_xLj_8EPAviDPFHwBnkX3PDwIHP3SnIEJWHFsXqeseYWviKyhiB7bkCCsBVEC3rkF8WMQ-VHtHgIfRFBIvPJ-NZZq2ZeLC51K4ryjNtlUg341zR5lhkMVw1sC6hyE2Sv3ju-7M8zWXLBxNZmmeGcdVt_liEQiHCZQlHgecTwCQRlD8vltmuaNVcNoX4_-9ZzJxgmlWbinSV-fBaQQ7eK65ik8Cj20l7ZAxlhZirMnOobWBQpKKksvQadkMO9gf5OlftI9K-7MvO8JMYzlsFPj0Xm3cWezQ3kfKsnRkzKUzWuYqhYq3tZvp87sBis7Ib-KYp1frB3mcWYVAlMYyaIN3ekvbXK2-dFVZkwDAVybw2hZVNzrU85J0-oDw9uKDA!!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">À propos de nous</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/careers/index/0,,lang=fr&navId=660000,00.html">Carrières</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/home/index/0,,lang=fr,00.html">International</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <nav class="footer-right-nav" aria-label="Navigation pied de page" role="navigation">
+                                <ul>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/article/index/0,,catId=670003&artId=148052&lang=fr,00.html">Accessibilité</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Manulifefinancial/privacy%20policy/!ut/p/b1/jVLLkqJAEPwWP4ChoXkewQZsHi1og8DFYEQQFEVQAb9-3Ym9zGHcqVtFZFZlZhWbsjGbnrNHVWa36nLOTn_7VNp6tq5DUxSARSECmFowdGXKa7r0AiQvAPihNPCdr4giD7ArosCGMgcsnt2wMU2GEfV4QNp8C6rNs1tleLl1vPxMdu0QcPQYoPCs-OUlbnPitglO045EfKmcDun5dney63CyJ3dZTOORt0lXgBjd-_oRVcuuTW5TYBUhE0WmCml2YujN08LrvLgbIVOvyxLoR2VkmsVQL67MHpueyvSfsN2YS202--fvRwPgd_lYGEQGjWxFALwJsLgGgiS70Arg7_hvAvwPf8OmX5B3Cr4A7074_oiAJYtLs2dtNq0-m49h13yADyirQIKvbVAQVEFS2PX-zCavQfKPaleApWwMhO26nlr8PD5XNZgmz7UxQXjwXNOjoej0ne55XY7XTw-SOvWJUXKEEp_rVS4yA0NDyXikyey7HElWZE6UgaTwPOR4yEZ1Iqjo4g0Ibx7D3RnHxRLKNdBS6h0q42B_ahES_My4Hv3omhN52OYMtfJ9L3U7LTBdJwNF0vSidhfGVosC78JoeDq3OJCD3cmJOX_16KVHq82XJ1LU9ibr7GnZVG4DGAXlIymuRCYG1nnFV1RGFy6pmbZFpzFWbzrXezCBYDoEMRgebeGT1x_7KsL0xtBSR1snQsHrO9smfDiOK60WQ8kpw-wPshUjEw!!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">Confidentialité</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.com/public/article/index/0,,lang=fr&catId=670003,00.html">Légal</a>
+                                    </li>
+                                    <li>
+                                        <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Sitemap/!ut/p/b1/jZBfT4NAEMS_ETtwd0AfWy3_i0Uo1HshqA1BhTNiIPXTS5s-mRS7b5vMb2d2SNKeZFcNTV19N6qrPk67NMtNsFoxR3DYd8yAH8Vpgm0GrPVJ8DQJcGWW-MMLceLFfRIwS4drUEF78DJ9w9dDeHxXx9el19cqhR5nO9X_oNyiHze5k7iDtIbi4nf1IG7L6_rI11ke2ByGA1-k4KYVMTdht_EzD_3DFyTPkrkEZ8FcpfOlgmJPtQcKSDbPrTa-tBo0Zi1gssmNcb7gpk3poaPPdjeEYWQ-emP9C3ZiJiY!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">Plan du site</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            
+            <!-- Modal for Terms & Condition -->
+            <div class="modal modal-terms fade" id="termsModal" tabindex="-1" role="dialog" aria-hidden="false">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-terms-content">
+                        <div class="modal-header">
+                            <button type="button" id="termsCloseBtn" data-ng-click="close();" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="manupicto">×</span></button>
+                            <h4 class="modal-title">CONDITIONS D’UTILISATION</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Ces conditions d’utilisation (les « conditions ») régissent votre utilisation des sites Web et du contenu mobile sécurisés à l’intention des clients canadiens de La Compagnie d’Assurance-Vie Manufacturers (Manuvie) (appelé séparément un « site » et collectivement les « sites »). Les sites Web sont créés ou gérés par des tiers qui ont l’autorisation d’accéder à vos données grâce à un mécanisme d’authentification sécurisé sur un site de Manuvie.</p>
+                            <p>Dans les présentes conditions et dans les sites, « vous » et « votre » désignent l’utilisateur qui s’est inscrit aux sites et y a accédé, s’il y a lieu.</p>
+                            <p><b>EN ACCÉDANT AUX SITES OU EN LES UTILISANT, VOUS RECONNAISSEZ AVOIR LU ET COMPRIS LES PRÉSENTES CONDITIONS ET VOUS LES ACCEPTEZ. SI VOUS N’ACCEPTEZ PAS D’ÊTRE LIÉ PAR L’ENSEMBLE DE CES CONDITIONS, N’ACCÉDEZ PAS AUX SITES.</b></p>
+                            
+                            <h5>1. Utilisation des sites</h5>
+                            <p>Manuvie vous autorise à utiliser les sites pour des raisons de commodité et pour traiter avec elle ou pour participer à ses programmes, s’il y a lieu.</p>
+                            <p>En utilisant les sites, vous garantissez à Manuvie que vous ne vous en servirez à aucune fin illicite ou interdite par les conditions d’utilisation. Il vous est interdit d’utiliser les sites d’une façon qui pourrait les endommager, les mettre hors service, les surcharger ou les altérer ou faire obstacle à leur utilisation normale par une tierce partie.</p>
+                            
+                            <h5>2. Renseignements sur le compte, mot de passe, questions de vérification personnelle et signature électronique</h5>
+                            <p>Lorsque vous créez un compte pour accéder aux sites, vous devez indiquer votre adresse de courriel (« identifiant ») et un mot de passe. Le système vous enverra un lien de validation afin d’activer votre compte et accéder aux sites.</p>
+                            <p>Vous comprenez que les renseignements que vous fournissez à Manuvie en vous inscrivant aux sites ou à tout autre moment doivent être exacts, à jour et complets et vous vous engagez à veiller à ce qu’ils le demeurent. Vous devez protéger votre identifiant et votre mot de passe, et en assurer la confidentialité.</p>
+                            <p>Vous vous engagez, au minimum :</p>                                                   
+                            <ul>
+                                <li>à utiliser votre identifiant et votre mot de passe avec prudence de manière à éviter le vol, l’usurpation d’identité, l’accès non autorisé et la communication indue de renseignements;</li>
+                                <li>à préserver la confidentialité de votre identifiant et de votre mot de passe et à ne les révéler à personne;</li>
+                                <li>à nous aviser immédiatement si jamais vous apprenez que votre identifiant et votre mot de passe sont connus d’un tiers ou qu’un tiers se sert de votre identifiant et de votre mot de passe pour utiliser les sites.</li>
+                            </ul>
+                                
+                            <h5>3. Sécurité</h5>
+                            <p>Vous vous engagez à vous conformer à toutes les exigences de sécurité de Manuvie se rapportant à l’utilisation des sites et à ne désactiver ou à ne contourner aucun élément de sécurité. Toute tentative non autorisée de contourner des éléments de sécurité, d’utiliser les sites à d’autres fins que celles prévues, d’obtenir, modifier, altérer ou détruire des renseignements ou de perturber de quelque façon le fonctionnement des sites est interdite. Toute preuve de tels agissements peut être communiquée aux autorités chargées de l’application de la loi et mener à des poursuites criminelles.</p>
+                            
+                            <h5>4. Communications par voie électronique</h5>
+                            <p>Vous acceptez de communiquer avec Manuvie par voie électronique – notamment par télécopieur, Internet ou courriel – et vous consentez à ce que les contrats, avis, déclarations et autres communications que Manuvie vous envoie par voie électronique aux numéros ou adresses que vous lui indiquez satisfassent à toute exigence juridique selon laquelle ces communications doivent être faites par écrit.</p> 
+                            <p>Manuvie ne peut être tenue responsable des pertes ou des dommages que vous pourriez subir lorsque vous lui communiquez des renseignements personnels par télécopieur, en ligne, par courriel ou par tout autre moyen électronique, ni de ceux que vous pourriez subir lorsqu’elle vous communique de tels renseignements de cette manière à votre demande ou en réponse à un message envoyé par vous par le même moyen. Manuvie peut vérifier les communications ou leur provenance avant de les accepter, mais elle n’est pas tenue de le faire.</p>
+                            
+                            <h5>5. Protection des renseignements personnels</h5>
+                            <p>Manuvie accorde une grande importance à la protection de vos renseignements personnels et au respect de votre vie privée. Il est tout aussi essentiel que vous ayez confiance en sa capacité à bien gérer vos renseignements personnels. Manuvie s’engage à observer toutes les lois applicables touchant la protection de la vie privée et des renseignements personnels et à prendre les mesures administratives, techniques et physiques appropriées pour protéger vos renseignements personnels. Pour obtenir de plus amples renseignements sur les pratiques et les engagements de Manuvie à l’égard de la protection de vos renseignements personnels, veuillez lire sa <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Manulifefinancial/privacy%20policy/!ut/p/b1/jVLLkqJAEPwWP4ChoXkewQZsHi1og8DFYEQQFEVQAb9-3Ym9zGHcqVtFZFZlZhWbsjGbnrNHVWa36nLOTn_7VNp6tq5DUxSARSECmFowdGXKa7r0AiQvAPihNPCdr4giD7ArosCGMgcsnt2wMU2GEfV4QNp8C6rNs1tleLl1vPxMdu0QcPQYoPCs-OUlbnPitglO045EfKmcDun5dney63CyJ3dZTOORt0lXgBjd-_oRVcuuTW5TYBUhE0WmCml2YujN08LrvLgbIVOvyxLoR2VkmsVQL67MHpueyvSfsN2YS202--fvRwPgd_lYGEQGjWxFALwJsLgGgiS70Arg7_hvAvwPf8OmX5B3Cr4A7074_oiAJYtLs2dtNq0-m49h13yADyirQIKvbVAQVEFS2PX-zCavQfKPaleApWwMhO26nlr8PD5XNZgmz7UxQXjwXNOjoej0ne55XY7XTw-SOvWJUXKEEp_rVS4yA0NDyXikyey7HElWZE6UgaTwPOR4yEZ1Iqjo4g0Ibx7D3RnHxRLKNdBS6h0q42B_ahES_My4Hv3omhN52OYMtfJ9L3U7LTBdJwNF0vSidhfGVosC78JoeDq3OJCD3cmJOX_16KVHq82XJ1LU9ibr7GnZVG4DGAXlIymuRCYG1nnFV1RGFy6pmbZFpzFWbzrXezCBYDoEMRgebeGT1x_7KsL0xtBSR1snQsHrO9smfDiOK60WQ8kpw-wPshUjEw!!/dl4/d5/L0lHSkovd0RNQURrQUVnQSEhLzRKVUUvZnI!/">politique de confidentialité</a>.</p> 
+                            <p>Si vous participez au programme Manuvie <i>Vitalité</i>, vos renseignements personnels sont également protégés en vertu de la politique de confidentialité du site Web du programme Manuvie <i>Vitalité</i>. Veuillez lire la politique de confidentialité du site du programme Manuvie <i>Vitalité</i> pour obtenir plus de détails sur la protection de la confidentialité de vos renseignements. À l’exception des renseignements personnels que vous nous avez fournis au moment de la création de votre compte sur ce site, Manuvie ne recueille, n’utilise et ne conserve aucun renseignement fourni dans le cadre de votre participation au programme Manuvie <i>Vitalité</i>.</p>
+                                                        
+                            <h5>6. Avertissements et limite de responsabilité</h5>
+                            <p>Vous reconnaissez que la télécopie, Internet, le courriel et les autres moyens électroniques de communication n’offrent pas, pour le moment, une sécurité à toute épreuve et que, par conséquent, la protection infaillible de vos renseignements personnels ne peut être garantie. Manuvie décline donc toute responsabilité envers vous à l’égard d’éventuels dommages liés aux sites (notamment en cas d’accès impossible, réduit ou non autorisé), à vos communications à Manuvie par télécopieur, par Internet, par courriel ou par tout autre moyen électronique et aux réponses de Manuvie par les mêmes moyens, sauf en cas d’atteinte à la vie privée due à la négligence de Manuvie ou à son inobservation de la loi.</p> 
+                            <p>Vous renoncez à toute réclamation que vous pourriez formuler contre Manuvie à l’égard de toute autre utilisation des sites.</p>
+                            <p>Compte tenu de la nouveauté des transactions par Internet et de la technologie qui s’y rapporte, vous reconnaissez que ces limitations de responsabilité sont justes et raisonnables et que Manuvie ne vous aurait pas permis d’accéder aux sites n’eût été votre acceptation de celles-ci.</p>
+                            <p>Manuvie croit que les renseignements que renferment les sites sont exacts dès qu’elle les rend accessibles. Vous reconnaissez et convenez que Manuvie ne peut garantir l’exactitude, l’exhaustivité ni l’authenticité du contenu du site, le fonctionnement du site ni l’exactitude de la transmission de tout renseignement ou de toute directive acheminée au site ou en provenance de celui-ci. Vous convenez que ni Manuvie, ni ses sociétés affiliées, ni aucun tiers associé à la création ou à l’utilisation des sites ne peuvent être tenus responsables envers quiconque d’aucun préjudice lié à votre utilisation de ceux-ci.</p>
+                            <p>Les services décrits dans les sites et les renseignements fournis dans les sites peuvent ne pas être offerts dans certaines régions du Canada ou aux personnes qui se trouvent à l’extérieur du Canada. Les services de Manuvie sont offerts uniquement dans les territoires où leur prestation est licite. Rien dans ces sites ne constitue une offre ou une proposition à l’intention de personnes résidant dans un territoire où le contenu ou l’exploitation des sites est interdit par la loi.</p>
+                            <p>L’information contenue dans les sites ne vise pas à vous donner des conseils en matière de finances, de placements, de droit, d’impôt, de commerce, de dépôt, ni en aucune autre matière; vous ne devez pas compter sur ces sites pour de tels conseils.</p>
+                            
+                            <h5>7. Modification</h5>
+                            <p>Manuvie se réserve le droit de modifier le contenu des sites ainsi que tous les produits et services fournis par leur intermédiaire, en tout temps, avec ou sans préavis.</p>
+                            <p>De plus, Manuvie peut modifier les conditions d’utilisation des sites en tout temps, avec ou sans préavis. Toute modification apportée aux conditions d’utilisation des sites sera publiée dans ceux-ci. En accédant aux sites ou en les utilisant après la publication de changements aux conditions d’utilisation, vous acceptez d’être lié par ces conditions, telles qu’elles ont été modifiées.</p>
+                            
+                            <h5>8. Dossiers</h5>
+                            <p>Sous réserve de preuve valable de leur inexactitude, les dossiers de Manuvie relatifs à votre compte sont irréfutables et vous acceptez d’être lié par eux. En cas de divergence entre les renseignements fournis par les sites et ceux consignés dans le système de tenue de dossiers de Manuvie, ce système aura préséance.</p>
+                            
+                            <h5>9. Annulation, suspension ou interruption de l’accès</h5>
+                            <p>Manuvie se réserve le droit d’annuler votre accès aux sites ou à une partie de ceux-ci à son entière discrétion, en tout temps et sans préavis. Elle peut aussi mettre fin, en tout ou en partie, aux services fournis relatifs aux sites, en tout temps et sans préavis. Elle décline toute responsabilité à l’égard des dommages qui pourraient en découler.</p>
+                            <p>Il est possible que les services qui vous sont offerts sur les sites soient périodiquement indisponibles, en partie ou en totalité, pour des raisons de maintenance ou de mise à jour ou pour tout autre motif valable, y compris des raisons indépendantes de la volonté de Manuvie.</p>
+                            <p>Lorsque vous ne pouvez ou ne voulez pas utiliser les sites, vous pouvez communiquer directement avec Manuvie par téléphone, par télécopieur ou par la poste, selon le cas, pendant les heures normales de bureau ou à tout autre moment où ces services vous sont offerts.</p>
+                                                                                                                                                
+                            <h5>10. Lois applicables</h5>
+                            <p>Les présentes conditions et leur interprétation sont régies par les lois de l’Ontario et les lois du Canada applicables dans cette province, sans égard aux règles relatives aux conflits de lois.</p>
+                                                                                                                                                
+                            <h5>11. Conditions additionnelles si vous participez au programme Manuvie Vitalité :</h5>
+                            <p>En plus de ces conditions, votre utilisation du site Web et du site mobile du programme Manuvie <i>Vitalité</i> est également régie par les conditions d’utilisation du site Web spécifiques du programme Manuvie <i>Vitalité</i>, qui sont accessibles à partir de ce site de Manuvie. Vous comprenez que vous devez accepter les <u>Manuvie <i>Vitalité</i> conditions</u> et le document <u>Consentement à la collecte, à l’utilisation et à la communication de renseignements</u> personnels afin de participer au programme Manuvie <i>Vitalité</i>. Ces sites sont mis à votre disposition lorsque vous vous inscrivez au programme Manuvie Vitalité et accessibles sur le site du programme Manuvie <i>Vitalité</i>. En cas de conflit entre ces conditions et celles du programme Manuvie <i>Vitalité</i>, les <u>Manuvie <i>Vitalité</i> conditions</u>  et le document <u>Consentement à la collecte, à l’utilisation et à la communication de renseignements</u> personnels auront préséance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+             <!-- Modal for Contact Us -->
+            <div class="modal modal-contact fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModalTitle">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-contact-content">
+                        <div class="modal-header">
+                            <button type="button" id="contactCloseBtn" data-ng-click="close();" class="close" aria-label="Close">
+                                <span aria-hidden="true" class="manupicto">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="contactModalTitle">Mon Hub</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p class="link-manupicto medium">
+                             Vous avez une question?  Consultez notre &nbsp;
+                                <a href="#" class="contact-us-faq-toggle" mnlf-transition-modal="" data-controller="modalController" data-focus-after-selector="body" role="button">
+                                    foire aux questions
+                                </a>
+                            </p>
+        					Vous pouvez aussi : 
+                            <div class="info-group">
+                                <a href="tel:18886268543" role="button" aria-label="Contact Manulife by phone at 18886268543" class="visible-xs call-to-action link-manupicto">
+                                    <span class="manupicto manupicto-contact" aria-hidden="true"></span>
+                                    <strong>18886268543</strong>
+                                </a>
+        
+                                <span class="hidden-xs call-to-action link-manupicto" aria-label="Contact Manulife by phone at 18886268543">
+                                    <span class="manupicto manupicto-contact" aria-hidden="true"></span>
+                                    <strong>18886268543</strong>
+                                </span>
+        
+                                <p class="link-manupicto">
+                                    Nous sommes à votre disposition du lundi au vendredi, entre 8 h 30 et 17 h 00, HNE.
+                                    <a href="#" role="button" class="link-manupicto ng-hide">
+                                        <span class="manupicto manupicto-arrow-left" aria-hidden="true"></span>
+                                        Nous sommes à votre disposition du lundi au vendredi, entre 8 h 30 et 17 h 00, HNE.
+                                    </a>
+                                </p>
+                            </div>
+        
+                            <div class="info-group">
+                                <a href="mailto:ManuvieVitalite@manuvie.com" role="button" aria-label="Contact manulife.ca by email" class="call-to-action link-manupicto">
+                                    <span class="manupicto manupicto-circled-email" aria-hidden="true"></span>
+                                    <strong>ManuvieVitalite@manuvie.com</strong>
+                                </a>
+                                <p>Nous répondons habituellement dans un délai d’un jour ouvrable.</p>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Pas ce que vous cherchiez?</p>
+                            <a href="http://www.manulife.ca/wps/portal/manulifeca/Manulife.caHome/Manulife.ca/Manulifefinancial/!ut/p/b1/jZPJkqJAEIafxQfopqqgWI7QLIIFChYKXAhxQUEWhWF7-nZ65jIHdfKWEd8fmfn_kUzEBExU7rpLumsvVbm7_u4jPrYtRWF1zAGDsiowqcH6RKBIVvgHED4A8KRk8K9exBgBk2DVtVgBAgP91T8FwP_NN0yw0ejGEjmAdGDiNeB4gbCGy77Tb5mAhv2gVnavatuur0mknM00lDa01xfXLHeo43I33GFdOJC244-l2jeNRe61jHaqtc-Gscpr_wtdxwuS1BMuXLj1vZOYpdKBKi0p0FITUUMW-ekojvW-8nCaLSUJarCK2bbbNkPcaPpyxartffhYp9SOiYLJknb-7J0_6P190Q_yyqEf4FWEr0MEjDOviiMTPjDh6S4eYCgTAC5eZ2NtTvnkZWCwnMQH9t3sbaIBOpmg1UboqPawBvnk5Cl0Mn-wfXGCewludFeTDYGvduGMsZjokhSf_b74BJ-8IAoQC4AXEWIhYpkN3Td_MjWD8w2ryiJO9m10lEntJ26V-8tBC5UtPrnydDhlUFKnrrGE1SjLi1ubJIPJsyv57lkg3VbTPJeNNgul80I-6SF5_AcfZqsmNT1IA80uq48ymqOV2JerxBDijPs6DmJ2LMpAkebBLwVzLajsGVMXvu93hPfmPRR7efYNArxhEA!!/dl4/d5/L0lDUmlTUSEhL3dHa0FKRnNBLzRKVXFDQSEhL2Vu/" class="link-manupicto" aria-role="link" target="_blank" aria-label="View all Manulife contacts (Please note: this link opens the page in a new browser window.)">
+                                <span class="manupicto manupicto-arrow-left" aria-hidden="true"></span>
+                                Voir la section Communiquez avec nous de Manuvie.
+                            </a>
+        
+                            <a href="#" data-ng-click="close();" aria-label="Close" role="button" mnlf-delegate-focus="" data-element="#contactCloseBtn"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal for FAQ -->
+            <div class="modal modal-faq fade" id="faqModal" tabindex="-1" role="dialog" aria-labelledby="contactFaqTitle">
+                <div class="modal-dialog">
+                    <div class="modal-content modal-faq-content">
+                        <div class="modal-header">
+                            <button type="button" id="faqCloseBtn" class="close" data-ng-click="close();" aria-label="Close">
+                                <span aria-hidden="true" class="manupicto">&times;</span>
+                            </button>
+                            <h4 class="modal-title" id="contactFaqTitle">FAQ – Mon carrefour</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <h4 class="panel-title">
+                                            <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                <span>J’ai oublié mon mot de passe.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent, et nous pouvons vous aider!</p>
+                                            <p><a href="{!$Label.Vitality_ResetPwdSiteURLFrench}">Mot de passe oublié</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                <span>Je souhaite modifier mon mot de passe.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Cliquez sur Mot de passe oublié et suivez les étapes.</p>
+                                            <p><a href="{!$Label.Vitality_ResetPwdSiteURLFrench}">Mot de passe oublié</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingThree">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                <span>Mon compte est verrouillé.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent. Il vous suffit de cliquer sur Mot de passe oublié et de suivre les étapes.</p>
+                                            <p><a href="{!$Label.Vitality_ResetPwdSiteURLFrench}">Mot de passe oublié</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                <span>Je n’ai pas reçu le courriel destiné à réinitialiser mon mot de passe.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent. Il vous suffit de communiquer avec nous.</p>
+                                            <p><a href="#" class="faq-contact-us-toggle">Contactez nous</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                                <span>Que dois-je faire si je ne me souviens plus de l’adresse courriel que je dois utiliser pour ouvrir une session?</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Nous pouvons vous aider. Il nous faut seulement quelques renseignements avant de commencer.</p>
+                                            <p><a href="#" class="faq-contact-us-toggle">Contactez nous</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                                <span>Comment puis-je créer un compte?</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>C’est facile. Il vous suffit de cliquer sur Créer un compte et de suivre les étapes.</p>
+                                            <p><a href="{!$Label.Vitality_RegistrationSiteURLFrench}">Créer un compte</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default">
+                                    <div class="panel-heading" role="tab" id="headingTwo">
+                                        <h4 class="panel-title">
+                                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                                <span>Je n’arrive pas à créer mon compte.</span>
+                                            </a>
+                                        </h4>
+                                    </div>
+                                    <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                        <div class="panel-body">
+                                            <p>Ce sont des choses qui arrivent. Nous avons seulement besoin de quelques renseignements.</p>
+                                            <p><a href="#" class="faq-contact-us-toggle">Créer un compte</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="#" data-ng-click="close();" role="button" mnlf-delegate-focus="" data-element="#faqCloseBtn"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-backdrop fade ng-scope"></div>
+
+            <script src="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/libs/jquery.min.js')}" type="text/javascript"></script>
+            <apex:includeScript value="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/vendors.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/manulife.js')}"/>
+            <script src="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/plugins/passwordStrength.js')}" type="text/javascript"></script>
+            <apex:includeScript value="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/custom/main.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.ManulifeVitalityAsset, 'js/custom/validator/fieldValidator.js')}"/>
+            
+            <script>
+                $(document).ready(function() {
+                    $('#btnSubmit').on('click', function() {
+                        var _this = $(this);
+                        $(this).attr('disabled', 'disabled');
+                        var dateOfBirth = $('#birthdate-year').val() + '-' + $('#birthdate-month').val() + '-' + $('#birthdate-day').val();
+                        var userDetails = {
+                            "firstName"   : $('#firstname').val(),
+                            "lastName"    : $('#lastname').val(),
+                            "dateOfBirth" : dateOfBirth,
+                            "policyNumber": $('#policyNumber').val(),
+                            "email"       : $('#email').val()
+                        };
+                        
+                        $('.processing').removeClass('ng-hide');
+                        Visualforce.remoting.Manager.invokeAction('{!$RemoteAction.Vitality_RegistrationRequestController.checkContactExist}', userDetails, function(result, event) {
+                            if (result.status === 'error') {
+                                if(result.policyRelated === 'true') {
+                                    $('.error-wrapper .alert-danger h3').hide();
+                                    $('.error-wrapper').removeClass('ng-hide').children('.alert-danger').children('p').html("{!$Label.lbl_PolicyTerminated}");
+                                }else {
+                                    $('.error-wrapper .alert-danger h3').show();
+                                    $('.error-wrapper').removeClass('ng-hide').children('.alert-danger').children('p').html("{!$Label.lbl_MatchRecord}");
+                                }
+                                $('.processing').addClass('ng-hide');
+                                _this.removeAttr('disabled');
+                            }
+                            else if(result.status === 'success') {
+                                window.location.href = '/VitalityRegistration/Vitality_Registration_PWD_Form_Fr?id='+result.id+'&email='+result.email;
+                            }
+                        });
+                    });
+                }); 
+            	function checkFirst(event) { 
+                    var node = getTarget(event); 
+                    var result; 
+                    
+                    if( node.value == "" || $(node).hasClass('ng-invalid') ) {
+                        var result =  "You must enter your first name"; 
+                    } else {
+                        result = ""; 
+                    } // endif 
+                    
+                    showError(node, result); 
+                    
+                    return stopPropagation( event); 
+                    
+                }
+                function getTarget( event ) { 
+                    var e = event || window.event; 
+                    
+                    if( e.target ) 
+                        return e.target; 
+                    else 
+                        return e.srcElement; 
+                }
+                function stopPropagation( event ) { 
+                    if( event.stopPropagation ) 
+                        event.stopPropagation(); 
+                    
+                    if( event.preventDefault ) 
+                        event.preventDefault(); 
+                    
+                    if( event.cancelBubble) 
+                        event.cancelBubble = true; 
+                    
+                    if(event.returnValue) 
+                        event.returnValue = false; 
+                    
+                    return false; 
+                } 
+            	function showError(node, message) { 
+                    var id = node.id + "-error"; 
+                    
+                    var node_error = document.getElementById( id ); 
+                    
+                    /* if( node_error ) 
+                        node_error.innerHTML = "<span class='offscreen'>In valid: </span>" + message;  */
+                    
+                    if( message == "" ) { 
+                        node.setAttribute('aria-invalid', 'false'); 
+                        // node_error.style.display = "none"; 
+                    } else { 
+                        node.setAttribute('aria-invalid', 'true'); 
+                        // node_error.style.display = "inline"; 
+                    }
+                }
+            </script>
+            <!-- ******* START Analytics Code ************** -->
+                <script type="text/javascript">
+                        var s_account="manuconsumerportal"
+                        if(s) {
+                            s.pageName="Vitality Registration";
+                            s.server= window.location.hostname;
+                            s.channel="Registration Page";				
+                            s.prop8="ConPort"; 	   
+                            s.prop13="Registration Page”;
+                            s.events="event54"; 
+							s.eVar9="ConPort"; 
+                        }
+                </script>
+            	<script type="text/javascript">_satellite.pageBottom();</script> 
+        	<!-- ******* END Analytics Code ************** -->
+        </body>
+    </html>
+</apex:page>

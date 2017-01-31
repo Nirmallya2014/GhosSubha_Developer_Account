@@ -3,9 +3,9 @@ public class AccountHandler {
     public AccountHandler() {
         Account a = insertNewAccount('Test Account 122');
         Account ac = insertNewAccount(null);
-        system.debug('New Changes Test 1');
-        system.debug('New Changes Test 2');
-        system.debug('New Changes Test 3');
+        system.debug('New Changes Test 11');
+        system.debug('New Changes Test 21');
+        system.debug('New Changes Test 31');
     }
     public static Account insertNewAccount(string accountName) {
         try {

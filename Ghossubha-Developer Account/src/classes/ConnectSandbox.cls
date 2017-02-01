@@ -1,8 +1,9 @@
 public class ConnectSandbox {
-   public String clientId {get; set;} //= '3MVG9Y6d_Btp4xp4UfGzxUDo3wF0ASm3PfkYi9_TISOuAGMojvTC7ZNA9ABIWqtGaRjvzWwKV7AsF28L8Lahv';
-   public String clientSecret {get; set;} //= '6422426981885505017';
-   public String username {get; set;} //= 'nghosh@gmail.com';
-   public String password {get; set;} //= 'Kolkata2006';
+   public String clientId {get; set;} //= '3MVG9ZL0ppGP5UrBmK0Nmry63398pH4iPmIqgSTQ8FTgoD4U5pLhA2CT9yEgAeVmQ2DNg2ifrA91IHSd8ZAjv';
+   public String clientSecret {get; set;} //= '3501799042714180977';
+   public String username {get; set;} //= 'nirmallya2014@gmail.com';
+   public String password {get; set;} //= 'India@2006';
+   
    public class deserializeResponse
    {
       public String id;
@@ -18,15 +19,22 @@ public class ConnectSandbox {
       req.setEndpoint('https://login.salesforce.com/services/oauth2/token');
       HttpResponse res = h.send(req);
       deserializeResponse resp1 = (deserializeResponse)JSON.deserialize(res.getbody(),deserializeResponse.class);
+      ApexPages.addmessage(new ApexPages.message(ApexPages.severity.CONFIRM, 'Access Token'+resp1.access_token));
       return resp1.access_token;
    }
    
    public void connectSandbox()
    {
-      ConnectSandbox getToken = new ConnectSandbox();
-      String accessToken;
-      accessToken = getToken.ReturnAccessToken();
-      ApexPages.addmessage(new ApexPages.message(ApexPages.severity.CONFIRM,'Connection established'));
-      system.debug('@Access Token@'+accessToken);
+   	  try {
+			  ConnectSandbox getToken = new ConnectSandbox();
+			  String accessToken;
+			  accessToken = getToken.ReturnAccessToken();
+			  ApexPages.addmessage(new ApexPages.message(ApexPages.severity.CONFIRM, 'Access Token'+accessToken));
+			  system.debug('@Access Token@'+accessToken);
+   	  }catch(Exception ex) {
+   	  		  ApexPages.addmessage(new ApexPages.message(ApexPages.severity.Error, ex.getMessage()));
+   	  		  ApexPages.addmessage(new ApexPages.message(ApexPages.severity.Error, 'Error is-'+ex.getLineNumber()));
+   	  		  ApexPages.addmessage(new ApexPages.message(ApexPages.severity.Error, 'Error is-'+ex.getCause()));
+   	  }
    }
 }

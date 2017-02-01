@@ -1,7 +1,7 @@
 public class AccountHandler {
     
     public AccountHandler() {
-        Account a = insertNewAccount('India Natural 222');
+        Account a = insertNewAccount('Nirmallya Ghosh');
         Account ac = insertNewAccount(null);
     }
     public static Account insertNewAccount(string accountName) {

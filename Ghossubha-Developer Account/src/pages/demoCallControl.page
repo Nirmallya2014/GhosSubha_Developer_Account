@@ -8,14 +8,12 @@
     disableSoftphoneInStandardApp = false;
     callLogSubject = 'Call on ';
 </script>
-
 <style>
 html, body {
     height: 100%;
     text-align: center;
     font-size:0.80em;
 }
-
 /* Inbound and Outbound icon sprite */
 .callDiv{
     width: 20px;

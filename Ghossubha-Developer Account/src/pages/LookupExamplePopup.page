@@ -4,7 +4,7 @@
    { 
       // bring popup window to front
       window.focus(); 
-      var ele=document.getElementById('{!$Component.form.block.section.query}');
+      var ele=document.getElementById('{!JSENCODE($Component.form.block.section.query)}');
       if (ele)
       {
          ele.focus();
@@ -18,9 +18,9 @@
       {
          winMain=window.parent.opener;
       }
-      var ele=winMain.document.getElementById('{!$CurrentPage.parameters.namefield}');
+      var ele=winMain.document.getElementById('{!JSENCODE($CurrentPage.parameters.namefield)}');
       ele.value=name;
-      ele=winMain.document.getElementById('{!$CurrentPage.parameters.idfield}');
+      ele=winMain.document.getElementById('{!JSENCODE($CurrentPage.parameters.idfield)}');
       ele.value=id;
       CloseWindow();
    }

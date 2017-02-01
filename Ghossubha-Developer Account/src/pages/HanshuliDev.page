@@ -96,6 +96,7 @@
                 </apex:pageBlockTable>
             </apex:pageBlockSection>
         </apex:form>
+   
             <!-------------------- Add New Order ------------------>
         <apex:form id="addNewOrder">
             <apex:pageBlockSection title="Add New Order">
@@ -193,5 +194,6 @@
                     </apex:column>
                 </apex:pageBlockTable>
         </apex:form>
+    
     </apex:pageblock>
 </apex:page>

@@ -5,8 +5,6 @@ public class AccountHandler {
         Account ac = insertNewAccount(null);
         system.debug('New Changes Test 11');
         system.debug('New Changes Test 21');
-        system.debug('New Changes Test 31');
-        system.debug('New Changes Test Ha Ha Hooo');
     }
     public static Account insertNewAccount(string accountName) {
         try {

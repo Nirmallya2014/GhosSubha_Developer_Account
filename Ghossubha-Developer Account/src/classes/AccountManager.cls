@@ -11,7 +11,7 @@ global with sharing class AccountManager {
     
    
     global static Account putAccount() {
-    	system.debug('New Class Addition 2');
+    	system.debug('New Class Addition');
         RestRequest request = RestContext.request;
         String accountId = request.requestURI.substring(request.requestURI.lastIndexOf('/')+1);
         Account act = [select id, name from account where Id =: accountId];

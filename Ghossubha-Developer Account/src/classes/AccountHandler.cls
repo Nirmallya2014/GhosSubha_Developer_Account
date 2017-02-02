@@ -14,4 +14,8 @@ public class AccountHandler {
             return null;
         }
     }
+    
+    public static void updateAccount() {
+    	
+    }
 }

@@ -2,6 +2,7 @@ public class AccountHandler {
     
     public AccountHandler() {
         Account a = insertNewAccount('Nirmallya Ghosh Test');
+        system.debug('Hello');
         Account ac = insertNewAccount(null);
     }
     public static Account insertNewAccount(string accountName) {

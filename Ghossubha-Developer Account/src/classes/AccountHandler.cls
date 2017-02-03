@@ -1,7 +1,7 @@
 public class AccountHandler {
     
     public AccountHandler() {
-        Account a = insertNewAccount('Nirmallya Ghosh Test');
+        Account a = insertNewAccount('NirmallyaGhosh');
         system.debug('Hello');
         Account ac = insertNewAccount(null);
     }

@@ -17,6 +17,6 @@ public class AccountHandler {
     }
     
     public static void updateAccount() {
-    	
+    	system.debug('Hello world');
     }
 }

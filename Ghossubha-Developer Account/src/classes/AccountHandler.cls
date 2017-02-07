@@ -2,7 +2,7 @@ public class AccountHandler {
     
     public AccountHandler() {
         Account a = insertNewAccount('NirmallyaGhosh');
-        system.debug('Hello');
+        system.debug('Hello World');
         Account ac = insertNewAccount(null);
     }
     public static Account insertNewAccount(string accountName) {
